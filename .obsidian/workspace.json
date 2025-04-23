@@ -11,10 +11,14 @@
             "id": "298adf86bf519e69",
             "type": "leaf",
             "state": {
-              "type": "graph",
-              "state": {},
-              "icon": "lucide-git-fork",
-              "title": "Graph view"
+              "type": "markdown",
+              "state": {
+                "file": "Notion/Ingeniería de datos/Clase 8.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Clase 8"
             }
           }
         ]
@@ -74,7 +78,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "c14afa40bcfef6c0",
@@ -192,7 +197,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 396.5
+    "width": 438.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -213,31 +218,33 @@
   },
   "active": "298adf86bf519e69",
   "lastOpenFiles": [
+    "Pasted image 20250422213052.png",
+    "Pasted image 20250422212753.png",
+    "Pasted image 20250422212411.png",
+    "Pasted image 20250422212205.png",
+    "Pasted image 20250422212049.png",
+    "Pasted image 20250422212039.png",
+    "Pasted image 20250422211857.png",
+    "Pasted image 20250422211855.png",
+    "Pasted image 20250422211842.png",
+    "Pasted image 20250422211721.png",
+    "Pasted image 20250422211712.png",
+    "Notion/Ingeniería de datos/Clase 8.md",
     "Notion/Sistemas Operativos/Sistemas Operativos.md",
-    "image.png",
-    "image 41.png",
     "Notion/so/parcial 2/parcial 2.md",
     "Notion/Teoría de Sistemas/Final.md",
     "Notion/Teoría de Sistemas/Simulacro parcial.md",
     "Notion/Teoría de Sistemas/Clase 4.md",
     "Notion/Teoría de Sistemas/Clase 3.md",
     "Notion/Teoría de Sistemas/Clase 2.md",
-    "Untitled 1.png",
-    "Untitled.png",
     "Notion/Sistemas de Información I 2/Clase 2312313/Clase 2312313.md",
     "Notion/Sistemas de Información I 2/Clase 2.md",
     "Notion/Sistemas de Información I 2/Clase 1.md",
     "Notion/Teoría de Sistemas 2025/Resumen Parcial 1.md",
-    "image 1 16.png",
-    "image 40.png",
     "Notion/Teoría de Sistemas 2025/Clase 4/Clase 4.md",
     "Notion/Teoría de Sistemas 2025/Clase 3.md",
-    "image 1 15.png",
-    "image 39.png",
     "Notion/Teoría de Sistemas 2025/Clase 2/Clase 2.md",
-    "image 38.png",
     "Notion/Teoría de Sistemas 2025/Clase 1/Clase 1.md",
-    "image 1 14.png",
     "Notion/Probabilidad y Estadística/Clase 2/Clase 2.md",
     "Notion/Probabilidad y Estadística/Clase 1/Clase 1.md",
     "Notion/POO/Clase 1/Clase 1.md",
@@ -247,8 +254,6 @@
     "Notion/Sistemas de Información I/Clase 3/Clase 3.md",
     "Notion/Sistemas de Información I/Clase 2/Clase 2.md",
     "Notion/Sistemas de Información I/Clase 1/Clase 1.md",
-    "Notion/Ingeniería de datos/Clase 7/Clase 7.md",
-    "Notion/Ingeniería de datos/Clase 6/Clase 6.md",
     "Notion/so/parcial 2",
     "Notion/Sistemas de Información I 2/Clase 2312313",
     "Notion/Teoría de Sistemas 2025/Clase 4",
