@@ -1,24 +1,36 @@
 {
   "main": {
-    "id": "a95b528352219a19",
+    "id": "5324373015726ba8",
     "type": "split",
     "children": [
       {
-        "id": "41fcbdaa6543af28",
+        "id": "3323fb7ca8748464",
         "type": "tabs",
         "children": [
           {
-            "id": "298adf86bf519e69",
+            "id": "16e0140f7306f072",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Notion/Ingeniería de datos/Clase 8.md",
+                "file": "Notion/Sistemas de Información I/Clase 6.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Clase 8"
+              "title": "Clase 6"
+            }
+          },
+          {
+            "id": "320caf3ec7470588",
+            "type": "leaf",
+            "state": {
+              "type": "excalidraw",
+              "state": {
+                "file": "Excalidraw/Drawing 2025-05-08 20.52.29.excalidraw.md"
+              },
+              "icon": "excalidraw-icon",
+              "title": "Drawing 2025-05-08 20.52.29.excalidraw"
             }
           }
         ]
@@ -168,8 +180,8 @@
             "state": {
               "type": "review-queue-list-view",
               "state": {},
-              "icon": "lucide-file",
-              "title": "Plugin no longer active"
+              "icon": "SpacedRepIcon",
+              "title": "Notes Review Queue"
             }
           },
           {
@@ -216,20 +228,33 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "298adf86bf519e69",
+  "active": "a3db7bfcff25a703",
   "lastOpenFiles": [
-    "Pasted image 20250422213052.png",
-    "Pasted image 20250422212753.png",
-    "Pasted image 20250422212411.png",
-    "Pasted image 20250422212205.png",
-    "Pasted image 20250422212049.png",
-    "Pasted image 20250422212039.png",
-    "Pasted image 20250422211857.png",
-    "Pasted image 20250422211855.png",
-    "Pasted image 20250422211842.png",
-    "Pasted image 20250422211721.png",
-    "Pasted image 20250422211712.png",
+    "Pasted image 20250508211233.png",
+    "Excalidraw/Drawing 2025-05-08 20.49.28.excalidraw.md",
+    "Notion/Sistemas de Información I/Clase 6.md",
+    "Excalidraw/Drawing 2025-05-08 20.52.29.excalidraw.md",
+    "Pasted image 20250508205521.png",
+    "Excalidraw/Drawing 2025-05-08 20.00.37.excalidraw.md",
+    "Pasted image 20250508200734.png",
+    "Excalidraw",
+    "Pasted image 20250508195831.png",
+    "Pasted image 20250508195819.png",
+    "Pasted image 20250508195813.png",
+    "Pasted image 20250508195757.png",
+    "Pasted image 20250508195740.png",
+    "Pasted image 20250508195727.png",
+    "Pasted image 20250508195652.png",
+    "Notion/POO/Resumen Parcial 1.md",
+    "Welcome.md",
+    "Resumen Parcial 1.md",
+    "Notion/Probabilidad y Estadística/Resumen Parcial 1.md",
+    "Notion/Probabilidad y Estadística/Clase 1/Clase 1.md",
+    "Notion/Probabilidad y Estadística/Clase 2/Clase 2.md",
+    "Notion/Probabilidad y Estadística/Probabilidad y Estadística.md",
+    "Untitled.md",
     "Notion/Ingeniería de datos/Clase 8.md",
+    "Pasted image 20250422213052.png",
     "Notion/Sistemas Operativos/Sistemas Operativos.md",
     "Notion/so/parcial 2/parcial 2.md",
     "Notion/Teoría de Sistemas/Final.md",
@@ -242,18 +267,6 @@
     "Notion/Sistemas de Información I 2/Clase 1.md",
     "Notion/Teoría de Sistemas 2025/Resumen Parcial 1.md",
     "Notion/Teoría de Sistemas 2025/Clase 4/Clase 4.md",
-    "Notion/Teoría de Sistemas 2025/Clase 3.md",
-    "Notion/Teoría de Sistemas 2025/Clase 2/Clase 2.md",
-    "Notion/Teoría de Sistemas 2025/Clase 1/Clase 1.md",
-    "Notion/Probabilidad y Estadística/Clase 2/Clase 2.md",
-    "Notion/Probabilidad y Estadística/Clase 1/Clase 1.md",
-    "Notion/POO/Clase 1/Clase 1.md",
-    "Notion/Sistemas de Información I/Resumen parcial 1 2025.md",
-    "Notion/Sistemas de Información I/Clase 5/Clase 5.md",
-    "Notion/Sistemas de Información I/Clase 4/Clase 4.md",
-    "Notion/Sistemas de Información I/Clase 3/Clase 3.md",
-    "Notion/Sistemas de Información I/Clase 2/Clase 2.md",
-    "Notion/Sistemas de Información I/Clase 1/Clase 1.md",
     "Notion/so/parcial 2",
     "Notion/Sistemas de Información I 2/Clase 2312313",
     "Notion/Teoría de Sistemas 2025/Clase 4",
@@ -262,7 +275,6 @@
     "Notion/Probabilidad y Estadística/Clase 2",
     "Notion/Probabilidad y Estadística/Clase 1",
     "Notion/POO/Clase 1",
-    "Notion/Sistemas de Información I/Clase 5",
-    "Notion/Sistemas de Información I/Clase 4"
+    "Notion/Sistemas de Información I/Clase 5"
   ]
 }

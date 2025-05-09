@@ -8,4 +8,4 @@
 
 [[Teoría de Sistemas 2025/Clase 4/Clase 4|Clase 4]]
 
-[[Resumen Parcial 1]]
+[[Notion/Teoría de Sistemas 2025/Resumen Parcial 1]]

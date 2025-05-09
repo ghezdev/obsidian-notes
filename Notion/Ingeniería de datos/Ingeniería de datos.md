@@ -8,6 +8,6 @@
 
 [[Clase 5]]
 
-[[Clase 6]]
+[[Notion/Ingeniería de datos/Clase 6/Clase 6]]
 
 [[Clase 7]]
