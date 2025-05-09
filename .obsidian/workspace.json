@@ -33,7 +33,8 @@
               "title": "Drawing 2025-05-08 20.52.29.excalidraw"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -228,11 +229,13 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "a3db7bfcff25a703",
+  "active": "320caf3ec7470588",
   "lastOpenFiles": [
+    "Notion/Sistemas de Información I/Clase 6.md",
+    "Pasted image 20250508211927.png",
+    "Pasted image 20250508211747.png",
     "Pasted image 20250508211233.png",
     "Excalidraw/Drawing 2025-05-08 20.49.28.excalidraw.md",
-    "Notion/Sistemas de Información I/Clase 6.md",
     "Excalidraw/Drawing 2025-05-08 20.52.29.excalidraw.md",
     "Pasted image 20250508205521.png",
     "Excalidraw/Drawing 2025-05-08 20.00.37.excalidraw.md",
@@ -243,8 +246,6 @@
     "Pasted image 20250508195813.png",
     "Pasted image 20250508195757.png",
     "Pasted image 20250508195740.png",
-    "Pasted image 20250508195727.png",
-    "Pasted image 20250508195652.png",
     "Notion/POO/Resumen Parcial 1.md",
     "Welcome.md",
     "Resumen Parcial 1.md",
@@ -254,7 +255,6 @@
     "Notion/Probabilidad y Estadística/Probabilidad y Estadística.md",
     "Untitled.md",
     "Notion/Ingeniería de datos/Clase 8.md",
-    "Pasted image 20250422213052.png",
     "Notion/Sistemas Operativos/Sistemas Operativos.md",
     "Notion/so/parcial 2/parcial 2.md",
     "Notion/Teoría de Sistemas/Final.md",

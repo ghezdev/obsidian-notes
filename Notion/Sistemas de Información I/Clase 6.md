@@ -49,3 +49,30 @@
 ![[Pasted image 20250508211233.png]]
 
 Traer hecho para el 15/05 el diagrama de contexto 0 y 1 el sistema de biblioteca de uade
+
+
+# Diagrama de Transición de Estados
+
+- Se utilizan para describir el comportamiento de un sistema, representan los diferentes estados que puede adquirir una clase, como representarla a diferentes etapas de su vida
+- El estado de un objeto se puede caracterizar por el valor de uno o varios de los atributos de su clase, además el estado de un objeto también se puede caracterizar por la existencia de un enlace con otro objeto
+- !! Representar cómo cambia de estados un objeto del cual yo quiero analizar o estudiar
+
+![[Pasted image 20250508211747.png]]
+
+## Ejemplo
+
+![[Pasted image 20250508211927.png]]
+
+
+> [!NOTE] Nota
+> Los diagramas pueden no tener estado final
+
+
+## Tabla de transición de estados
+
+|     | Estado      | Transición    | Estado final |
+| --- | ----------- | ------------- | ------------ |
+| 0   | Desemplado  | Contratar     | Trabajando   |
+| 1   | Trabajando  | Perder empleo | Desempleado  |
+| 2   | Trabajando  | Jubilarse     | Jubilado     |
+| 3   | Desempleado | Jubilarse     | Jubilado     |
