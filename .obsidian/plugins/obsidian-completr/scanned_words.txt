@@ -1089,6 +1089,7 @@ vista
 vivos
 vocamente
 varias
+visualizar
 Make
 Markdown
 Marca
@@ -1831,6 +1832,8 @@ subconjuntos
 suele
 semos
 suceder
+sencillo
+solucionar
 try
 this
 the
@@ -2556,6 +2559,8 @@ redundancias
 represente
 restricci
 redundancia
+reutilizadas
+responsable
 delete
 de
 detallo
@@ -2924,6 +2929,10 @@ dichas
 dicta
 dictar
 dimensionales
+depuraci
+duplicaci
+diversos
+define
 and
 asdasdasd
 aplicar
@@ -3290,6 +3299,8 @@ aula
 aplicara
 agregamos
 agreg
+aislar
+anfitri
 make
 mo
 materia
@@ -3550,6 +3561,9 @@ mientras
 modelo
 multivaluadas
 multivaluada
+mantenimiento
+metodolog
+metodosWrapper
 NAOMI
 Nota
 No
@@ -3952,6 +3966,8 @@ Alternativas
 Aunque
 Aula
 Aumenta
+Archivos
+Arquitectura
 La
 Linked
 Lists
@@ -4596,6 +4612,8 @@ compuestas
 cumple
 consulta
 complejidad
+componente
+caracter
 la
 llamamos
 le
@@ -4786,6 +4804,7 @@ letras
 letra
 libro
 lecturas
+lectura
 Feynman
 FI
 FppX
@@ -4967,6 +4986,7 @@ FROM
 Factura
 Foreign
 Form
+Facilidad
 escribir
 estudiar
 en
@@ -5363,6 +5383,10 @@ esquema
 examen
 espurias
 esa
+estructurado
+ejecutar
+escalable
+extensible
 Obsidian
 Orientaci
 Objetos
@@ -5573,6 +5597,7 @@ Oracle
 Obligatoriedad
 Operador
 Objetivos
+Operativo
 que
 qu
 queda
@@ -6571,6 +6596,7 @@ Entonces
 Eliminar
 Evitar
 Existen
+Enfoque
 Primera
 Pasada
 Principios
@@ -6818,6 +6844,9 @@ Profesor
 Project
 PJNF
 Pr
+Plantilla
+Procesos
+PPT
 Imagina
 Identifica
 Inmediatamente
@@ -7204,6 +7233,7 @@ CANT
 Crear
 Codd
 Cuarta
+Claridad
 Dijkstra
 Dudas
 DT
@@ -7778,6 +7808,9 @@ fila
 funcional
 funcionalmente
 funcionales
+flujo
+facilita
+flexible
 Usa
 Una
 UX
@@ -8358,6 +8391,8 @@ SOLO
 Simplificar
 Segunda
 Separamos
+Software
+Sirve
 haz
 hora
 hayas
@@ -8564,6 +8599,7 @@ hay
 hace
 hacen
 hist
+hardware
 bien
 brechas
 base
@@ -9001,6 +9037,7 @@ REQUISITOS
 Reduce
 Reglas
 Ralentiza
+Reusabilidad
 Vuelve
 VZd
 VJo
@@ -9782,6 +9819,7 @@ grupo
 grado
 goles
 generen
+gico
 XA
 Xqt
 XJ
@@ -10141,6 +10179,8 @@ JUPq
 Jerarqu
 JUGADORAS
 Jugadoras
+JVM
+Java
 wO
 wE
 we
@@ -11377,6 +11417,7 @@ KmjMXrmH
 KGldNx
 KQIIMvSJOjkCBzqYZGi
 Kn
+Kotlin
 ZlxiB
 Zi
 Zl
