@@ -6,7 +6,7 @@
 
 [[Clase 4]]
 
-[[Clase 5]]
+[[Notion/Ingeniería de datos/Clase 5/Clase 5]]
 
 [[Notion/Ingeniería de datos/Clase 6/Clase 6]]
 
