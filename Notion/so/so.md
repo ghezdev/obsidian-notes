@@ -61,4 +61,4 @@ multiusuario es cuando tengo varios usuariso concurrentes que puedan usar el sis
 
   
 
-[[parcial 2]]
+[[Notion/so/parcial 2/parcial 2]]

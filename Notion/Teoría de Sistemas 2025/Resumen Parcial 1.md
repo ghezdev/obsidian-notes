@@ -1,6 +1,6 @@
 # Clasificación de los sistemas
 
-==**Ma**====**N**====**O**====**R**====**Ct**====**Fb**==
+**MaNORCtFb**
 
 - Según su relación con el ==**medio ambiente**==:
     - Abiertos: Tienen relación con el medio ambiente e intercambian entradas y salidas.

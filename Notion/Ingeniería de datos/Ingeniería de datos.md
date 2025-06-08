@@ -10,4 +10,4 @@
 
 [[Notion/Ingeniería de datos/Clase 6/Clase 6]]
 
-[[Clase 7]]
+[[Notion/Ingeniería de datos/Clase 7/Clase 7]]
