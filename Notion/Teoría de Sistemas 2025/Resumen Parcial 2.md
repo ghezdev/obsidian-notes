@@ -1,42 +1,9 @@
 ---
 ~
 ---
-# Clase 5
+# Problema
 
-# Entorno específico
-
-Entorno inmediato a la organización, interactúa con ella y la afecta directamente.
-
-# Macro entorno
-
-Entorno mediato, mucho más amplio. Produce efectos en el entorno específico y luego termina influenciando a la organización
-
-# Organización
-
-SIstema social diseñados para lograr metas y objetivos por medio de los recursos humanos y de otro tipo.
-
-## Características
-
-- Agrupación de entidades y funciones que pueden visualizarse y comprenderse claramente en un organigrama
-- Conjunto de componentes que interactúan entre sí a fin de generar productos o servicios que generen retornos monetarios
-
-# Datos
-
-Conjunto de hechos en bruto que representan sucesos ocurridos en las organizaciones o en el entorno físico, antes de ser organizados y acomodados de tal forma que las personas puedan utilizarlos y entenderlos
-
-- Hechos de la realidad
-- Medibles
-- Observables 
-
-
-
-
-
-— 
-
-# Problema y solución 
-
-- Es un hecho o circunstancia que requiere de una pronta solución o aclaratoria para darle fin.​
+Hecho o circunstancia que requiere de una pronta solución o aclaratoria para darle fin.​
 
 # Características de un problema
 
@@ -50,50 +17,37 @@ Conjunto de hechos en bruto que representan sucesos ocurridos en las organizacio
 
 # Tipos de problemas 
 
-- Convergentes, estructurales y lógico 
-- DIvergente 
-- Por analogía 
-- De razonamiento 
-
-
-# Problemas convergentes
+## Problemas convergentes
 
 Tienen una única solución definida y lógica 
 
-Ejemplo: Si lanza al mismo tiempo una pelota de béisbol y una bola de boliche desde un edificio. ¿Cuál golpeará el suelo primero?
+*Ejemplo: Si lanza al mismo tiempo una pelota de béisbol y una bola de boliche desde un edificio. ¿Cuál golpeará el suelo primero?*
 
 
-# Problemas divergentes 
+## Problemas divergentes 
 
 Son estudiados por muchas personas competentes en el tema, que buscan respuestas distintas e incluso contradictorias, por lo que no convergen. ​
 
-Ejemplo: ¿En cuáles objetos que comiencen con la letra BR puede pensar? Escriba un poema acerca del juego y del hielo
+*Ejemplo: ¿En cuáles objetos que comiencen con la letra BR puede pensar? Escriba un poema acerca del juego y del hielo*
 
 
-# Problemas por analogía 
+## Problemas por analogía 
 
-Se resuelven comparando características de la situación actual a resolver con las de situaciones pasadas. ​
+Se resuelven comparando características de la situación actual con las de situaciones pasadas. ​
 
-Relación de equivalencia entre dos parejas de palabras 
+## Problemas de razonamiento 
 
-Rio → Barco
-
-Carretera → Auto
-
-# Problemas de razonamiento 
-
-## Inductivos 
+### Inductivos 
 
 Esta más relacionado con la probabilidad y no con la lógica. ​
 
-## Deductivos
+### Deductivos
 
 Permite establecer relaciones lógicas.
 
 Forma de razonar que va de lo general a lo particular, y las conclusiones se infieren de sus premisas 
 
-Ejemplo: Todas las tortugas son verdes. Morro es una tortuga. Morro es verde.
-
+*Ejemplo: Todas las tortugas son verdes. Morro es una tortuga. Morro es verde.*
 
 
 # Clases de problemas 
@@ -102,24 +56,23 @@ Ejemplo: Todas las tortugas son verdes. Morro es una tortuga. Morro es verde.
 
 Se tiene con claridad la situación que lo formula 
 
-Ejemplo: En una tienda venden 8 huevos por 1 dolar, Ana quiere comprar 20 huevos, ¿Cuanto dinero necesita Ana para comprarlos?
+*Ejemplo: En una tienda venden 8 huevos por 1 dolar, Ana quiere comprar 20 huevos, ¿Cuanto dinero necesita Ana para comprarlos?*
 
 ## Mal estructurados 
 
 No se tiene claro cual es la situación que lo provoca 
 
-Ejemplo: ¿Qué debemos hacer para estimular el estudio en los niños de la comunidad?
+*Ejemplo: ¿Qué debemos hacer para estimular el estudio en los niños de la comunidad?*
 
 
 # Métodos de solución 
 
 La solución depende del enunciado del problema, el procedimiento para solucionarlo y la justificación de la comprobación. ​
 
-Actividad para buscar solucion a los problemas.​
-
-Es un proceso de mejora que presenta 5 etapas, cada una de ellas contribuye a la identificación de los problemas y la elaboración de acciones correctivas y preventivas para eliminarlos o minimizarlos.​
 
 # Método IDEAL
+
+Es un proceso de mejora que presenta 5 etapas, cada una de ellas contribuye a la identificación de los problemas y la elaboración de acciones correctivas y preventivas para eliminarlos o minimizarlos.​
 
 ## Identificar 
 **Identificar** el problema 
@@ -163,74 +116,37 @@ Son aquellas que de forma permanente se anticipan, adaptan y transforman.​
 -  En un entorno de cambio las habilidades de adaptación son muy beneficiosas.
 
 
-# Ciclos de aprendizaje 
-
-## Ciclo de Kolb 
-
-![[Pasted image 20250608170755.png]]
-
-## Ciclo de Handy 
-
-![[Pasted image 20250608170813.png]]
-
-
-
 # Organizaciones inteligentes 
 
  Es un estructura cuyos componentes funcionan como un todo, hacia un mismo objetivo, mediante la aplicación de sistemas, programas, políticas y reglamentos que permiten el avance conjunto.​
 
 
-# Las 5 disciplinas de las organizaciones inteligentes 
+# Las 5 disciplinas/propiedades de las organizaciones inteligentes 
 
-1. Dominio personal 
-2. Modelos mentales 
-3. Construcción de una visión compartida 
-4. Aprendizaje en equipo 
-5. La quinta disciplina. El pensamiento sistémico
-
-
-# Dominio personal 
+## 1. Dominio personal 
 
 Ayuda a aclarar las cosas que realmente nos interesan, para poner nuestra vida al servicio de nuestras mayores aspiraciones.
 
-**Dominio**: Nivel muy especial de habilidad
 
-**Dominio personal**: Disciplina que permite aclarar y ahondar continuamente nuestra visión personal, concentrar las energías, desarrollar paciencia y ver la realidad objetivamente.​
+## 2. Modelos mentales 
 
-Interesa ante todo las conexiones entre aprendizaje personal y aprendizaje organizacional, los compromisos recíprocos entre individuo y organización
-
+Implica realizar una introspección personal y descubrir las oscuras imágenes internas, dejando nuestro interior tan claro que pueda percibirse en la profundidad de nuestras miradas.
 
 
-# Modelos mentales 
+## 3. Construcción de una visión compartida
 
-La disciplina de trabajar sobre modelos mentales implica realizar una introspección personal y descubrir las oscuras imágenes internas, dejando nuestro interior tan claro que pueda percibirse en la profundidad de nuestras miradas.
-
-- Recogen los componentes importantes del funcionamiento de un sistema que no está formalizado o documentado. ​
-- Todo el conocimiento para que un proceso funcione, se encuentra en la cabeza de las personas → modelos mentales. Una vez que el modelo mental funciona, procedemos a sistematizar parte de sus procesos o componentes para aumentar la eficiencia del proceso.​
-- Supuestos hondamente arraigados, generalizaciones e imágenes que influyen sobre nuestro modo de comprender el mundo y actuar
+Propone metas o visiones de futuro compartidas entre todos los miembros de la organización. La misión o propósito, representa la razón fundamental para la existencia de la organización.
 
 
-# Construcción de una visión compartida
-
-Proponer metas o visiones de futuro compartidas entre todos los miembros de la organización. La misión o propósito, representa la razón fundamental para la existencia de la organización.
-
-- Todas las organizaciones desean demostrar su capacidad para compartir una imagen del futuro y un compromiso genuino por parte de todos.​
-- La visión compartida de una compañía gira en torno del carisma del líder para llevarla adelante pero surge del interés común y de la capacidad de compartir sus metas, valores y misión.
-
-
-# Aprendizaje en equipo 
+## 4. Aprendizaje en equipo 
 
 Hay un propósito común, una visión compartida que permite complementar los esfuerzos. Generar el contexto y desarrollo de aptitudes de trabajo en equipo, logrando el desarrollo de una figura más amplia, que supere la perspectiva individual.
 
-- La inteligencia del equipo supera la inteligencia de sus integrantes → aptitudes extraordinarias para la acción coordinada.​
-- Ejemplos: los deportes, artes dramáticas, ciencia y los negocios.​
-- Comienza con el diálogo → peloteo de ideas.​
-- Proceso de alinear las acciones y capacidades de una organización en una sola dirección.
 
-
-# La quinta disciplina. El pensamiento sistémico 
+## 5. La quinta disciplina. El pensamiento sistémico 
 
 Es para ver totalidades, interrelaciones en vez de cosas aisladas, la habilidad de encontrar patrones de cambio y entender cómo las partes afectan al todo.
+
 
 
 ## Pensamiento sistémico 
@@ -242,53 +158,57 @@ Es para ver totalidades, interrelaciones en vez de cosas aisladas, la habilidad 
 
 - Deben aplicarse en conjunto → pensamiento sistémico como 5ta disciplina → ”el todo” .​
 - El pensamiento sistémico requiere:​
-- Visión compartida: alienta el compromiso a largo plazo.​
-- Modelos mentales: desnuda las limitaciones de nuestra manera actual de ver el mundo.​
-- Aprendizaje en equipo: aptitud de grupo, trascender las individualidades.​
-- Dominio personal: motivación personal para aprender continuamente.​
-- Cambio de perspectiva en una OI: la gente descubre continuamente cómo crear.
+	- Visión compartida: alienta el compromiso a largo plazo.​
+	- Modelos mentales: desnuda las limitaciones de nuestra manera actual de ver el mundo.​
+	- Aprendizaje en equipo: aptitud de grupo, trascender las individualidades.​
+	- Dominio personal: motivación personal para aprender continuamente.​
+	- Cambio de perspectiva en una OI: la gente descubre continuamente cómo crear.
 
 
 
-—
-
-
+- - - 
 # Problemas de aprendizaje en las organizaciones 
 
-- Obstáculos, barreras o condiciones para que una organización aprenda y se adapten a los cambios.
+Obstáculos, barreras o condiciones para que una organización aprenda y se adapten a los cambios.
 
 # Los 7 problemas de aprendizaje
 
- 1. **“Yo soy mi puesto”** 
-	 1. Las personas se preocupan solo por sus funciones.​
-	 2. Las personas hacen lo mínimo e indispensable
-	 3. No ofrecen sinergia
-    
-2. “**El enemigo externo”** 
-	1. Echarle la culpa de los errores a los demás​
-	2. No se responsabiliza de los resultados negativos de la organización
+## 1. **“Yo soy mi puesto”** 
 
-3. **“La ilusión de hacerse cargo”** 
-	1. Ser reactivo y no proactivo​
-	2. La capacidad que nosotros pensamos que todo tiene que pasar por nuestras manos
-	3. La poca capacidad de trabajar en equipo
-	4. Personas que piensan tienen que hacer todo porque confían poco en sus compañeros para que la organización crezca
+- Las personas se preocupan solo por sus funciones.​
+- Las personas hacen lo mínimo e indispensable
+- No ofrecen sinergia
+## 2. “**El enemigo externo”** 
 
-4. **“La fijación en los hechos”** 
-	1. Prestar atención solo a lo inmediato​
-	2. Impide ver más allá de lo obvio
+- Echarle la culpa de los errores a los demás​
+- No se responsabiliza de los resultados negativos de la organización
 
-5. **“La parábola de la rana hervida”** 
-	1. La incapacidad de ver cambios lentos y graduales.​
-	2. Se valora la capacidad de ver cambios lentos y graduales
-	3. Una rana que se hierve lentamente en agua y no salta porque el cambio es imperceptible
+## 3. **“La ilusión de hacerse cargo”** 
 
-6. **“La ilusión de que se aprende con la experiencia”** 
-	1. Asumen que se aprende mejor de la experiencia, aunque no todo es de esta manera. ​
+- Ser reactivo y no proactivo​
+- La capacidad que nosotros pensamos que todo tiene que pasar por nuestras manos
+- La poca capacidad de trabajar en equipo
+- Personas que piensan tienen que hacer todo porque confían poco en sus compañeros para que la organización crezca
 
-7. **“El mito del equipo administrativo”** 
-	1. La creencia de que el equipo directivo está formado por un grupo de personas capacitadas para resolver todos los problemas.​
-	2. No se debe pretender que haya un equipo que lo resuelva todo, y que cada vez que haya problemas, se lo derive a ese equipo, generando un cuello de botella 
+## 4. **“La fijación en los hechos”** 
+
+- Prestar atención solo a lo inmediato​
+- Impide ver más allá de lo obvio
+
+## 5. **“La parábola de la rana hervida”** 
+
+- La incapacidad de ver cambios lentos y graduales.​
+- Se valora la capacidad de ver cambios lentos y graduales
+- Una rana que se hierve lentamente en agua y no salta porque el cambio es imperceptible
+
+## 6. **“La ilusión de que se aprende con la experiencia”** 
+
+- Asumen que se aprende mejor de la experiencia, aunque no todo es de esta manera. ​
+
+## 7. **“El mito del equipo administrativo”** 
+
+- La creencia de que el equipo directivo está formado por un grupo de personas capacitadas para resolver todos los problemas.​
+- No se debe pretender que haya un equipo que lo resuelva todo, y que cada vez que haya problemas, se lo derive a ese equipo, generando un cuello de botella 
 
 
 
@@ -340,8 +260,7 @@ Descomponer un sistema complejo en partes no permite entender su funcionamiento 
 Culpar a individuos o factores externos es inútil. Todos somos parte del sistema, y el sistema es la fuente de los problemas. La solución está en entender y cambiar el sistema.
 
 
-—
-
+- - - 
 # Arquetipo sistémicos
 
 - Son patrones de comportamiento de un sistema
