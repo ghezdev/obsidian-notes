@@ -1,6 +1,0 @@
-- [ ] Eliminar la grasa de las caderas y de los pectorales
-- [ ] Agarrar el hábito de cocinar
-- [ ] Agarrar el hábito de hacer ejercicio, aunque sea 20 minutos por día
-- [ ] Empezar a hablar y comprender inglés
-- [ ] Ganar igual o más de 1500 usd
-- [ ] Terminar el proyecto página web Maia
