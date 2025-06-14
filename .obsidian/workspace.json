@@ -4,21 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "c87abdc1e53e7d0a",
+        "id": "4509724f8bf84da7",
         "type": "tabs",
         "children": [
           {
-            "id": "8c1f87b861ceae24",
+            "id": "e7a7b303c61786dc",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Técnica Feynman.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "Técnica Feynman"
+              "title": "New tab"
             }
           }
         ]
@@ -78,7 +74,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "c14afa40bcfef6c0",
@@ -215,24 +212,26 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "8c1f87b861ceae24",
+  "active": "a3db7bfcff25a703",
   "lastOpenFiles": [
+    "Notion/Teoría de Sistemas 2025/Resumen Parcial 2.md",
+    "Notion/Teoría de Sistemas 2025/Resumen Parcial 1.md",
+    "Notion/Teoría de Sistemas 2025/Parcial 2.md",
+    "Notion/Teoría de Sistemas 2025/Untitled.md",
+    "Técnica Feynman.md",
     "Notion/Sistemas de Información I 2/Clase 2312313/Clase 2312313.md",
     "Welcome.md",
     "Notion/prog 3.md",
     "Notion/OBJETIVOS 2024.md",
-    "Notion/Teoría de Sistemas 2025/Resumen Parcial 2.md",
     "Pasted image 20250608202713.png",
     "Notion/Teoría de Sistemas 2025/Clase 7.md",
     "Notion/Teoría de Sistemas 2025/Clase 6.md",
     "Pasted image 20250608175003.png",
     "Pasted image 20250608170813.png",
     "Pasted image 20250608170755.png",
-    "Notion/Teoría de Sistemas 2025/Resumen Parcial 1.md",
     "Notion/Teoría de Sistemas 2025/Clase 2/Clase 2.md",
     "Notion/Teoría de Sistemas 2025/Clase 3.md",
     "Notion/Teoría de Sistemas 2025/Clase 5.md",
-    "Notion/Teoría de Sistemas 2025/Parcial 2.md",
     "Pasted image 20250607194900.png",
     "Pasted image 20250607194835.png",
     "Pasted image 20250607193541.png",
@@ -251,8 +250,6 @@
     "Notion/Teoría de Sistemas/Final.md",
     "Notion/Ingeniería de datos/Clase 5/Clase 5.md",
     "Notion/Ingeniería de datos/Clase 4/Clase 4.md",
-    "Notion/Ingeniería de datos/Ingeniería de datos.md",
-    "Notion/POO/Resumen Parcial 1.md",
     "Excalidraw",
     "Notion/so/parcial 2",
     "Notion/Sistemas de Información I 2/Clase 2312313",
