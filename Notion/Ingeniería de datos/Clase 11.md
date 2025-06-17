@@ -1,4 +1,4 @@
-	# Stores Procedures 
+# Stores Procedures 
 
 - Son bloques de código almacenado en la BD
 - Existen 2 tipos de procedimientos almacenados:

@@ -11,13 +11,46 @@
             "id": "e7a7b303c61786dc",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "Notion/Ingeniería de datos/Parcial/MANEJO DE NUMEROS.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "MANEJO DE NUMEROS"
+            }
+          },
+          {
+            "id": "4182a635f3f7063d",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Notion/Ingeniería de datos/Parcial/5-Objetos de BD.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "5-Objetos de BD"
+            }
+          },
+          {
+            "id": "9f0c2bdd394b421b",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Notion/Ingeniería de datos/Parcial/MANEJO DE STRINGS.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "MANEJO DE STRINGS"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -211,44 +244,45 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "a3db7bfcff25a703",
+  "active": "4182a635f3f7063d",
   "lastOpenFiles": [
-    "Notion/Teoría de Sistemas 2025/Resumen Parcial 2.md",
-    "Notion/Teoría de Sistemas 2025/Resumen Parcial 1.md",
-    "Notion/Teoría de Sistemas 2025/Parcial 2.md",
-    "Notion/Teoría de Sistemas 2025/Untitled.md",
-    "Técnica Feynman.md",
-    "Notion/Sistemas de Información I 2/Clase 2312313/Clase 2312313.md",
-    "Welcome.md",
-    "Notion/prog 3.md",
-    "Notion/OBJETIVOS 2024.md",
+    "Notion/Ingeniería de datos/Parcial/EXTRA.md",
+    "Notion/Ingeniería de datos/Parcial/NORMALIZACIÓN.md",
+    "Notion/Ingeniería de datos/Parcial/5-Objetos de BD.md",
+    "Notion/Ingeniería de datos/Parcial/14-TransaccionesRecoverySeguridad.md",
+    "Notion/Ingeniería de datos/Parcial/11-Triggers.md",
+    "Notion/Ingeniería de datos/Parcial/10-TSql Store Procedures.md",
+    "Notion/Ingeniería de datos/Parcial/9-SQL DDL.md",
+    "Notion/Ingeniería de datos/Parcial/8-Subqueries.md",
+    "Notion/Ingeniería de datos/Parcial/7-Joins.md",
+    "Notion/Ingeniería de datos/Parcial/4-Normalizacion.md",
+    "Notion/Ingeniería de datos/Parcial/MANEJO DE NUMEROS.md",
+    "Notion/Ingeniería de datos/Parcial/FUNCIONES EXTRA.md",
+    "Notion/Ingeniería de datos/Parcial/2-Modelo Relacional.md",
+    "Notion/Ingeniería de datos/Parcial/1-Introduccion DBMS.md",
+    "Notion/Ingeniería de datos/Clase 5/Clase 5.md",
+    "Notion/Ingeniería de datos/Clase 6/Clase 6.md",
+    "Notion/Ingeniería de datos/Clase 2/Clase 2.md",
+    "Notion/Ingeniería de datos/Clase 4/Clase 4.md",
+    "Notion/Ingeniería de datos/Parcial",
+    "Notion/Ingeniería de datos/Clase 3/Clase 3.md",
+    "Notion/Ingeniería de datos/Clase 1/Clase 1.md",
+    "Notion/Ingeniería de datos/Parcial/MANEJO DE FECHAS.md",
+    "Notion/Ingeniería de datos/Parcial/MANEJO DE STRINGS.md",
+    "Notion/Ingeniería de datos/Clase 11.md",
+    "Notion/Ingeniería de datos/Defensa TP.md",
+    "Notion/Ingeniería de datos/Ingeniería de datos.md",
+    "Notion/Ingeniería de datos/Clase 10.md",
     "Pasted image 20250608202713.png",
-    "Notion/Teoría de Sistemas 2025/Clase 7.md",
-    "Notion/Teoría de Sistemas 2025/Clase 6.md",
     "Pasted image 20250608175003.png",
     "Pasted image 20250608170813.png",
     "Pasted image 20250608170755.png",
-    "Notion/Teoría de Sistemas 2025/Clase 2/Clase 2.md",
-    "Notion/Teoría de Sistemas 2025/Clase 3.md",
-    "Notion/Teoría de Sistemas 2025/Clase 5.md",
     "Pasted image 20250607194900.png",
     "Pasted image 20250607194835.png",
     "Pasted image 20250607193541.png",
     "Pasted image 20250607193047.png",
     "Pasted image 20250607192844.png",
     "Pasted image 20250607192821.png",
-    "Notion/Ingeniería de datos/Clase 11.md",
-    "Notion/Ingeniería de datos/Clase 6/Clase 6.md",
-    "Notion/Ingeniería de datos/Clase 7/Clase 7.md",
-    "Notion/Ingeniería de datos/Clase 8.md",
-    "Notion/Ingeniería de datos/Clase 10.md",
-    "Notion/Ingeniería de datos/Defensa TP.md",
-    "Notion/Teoría de Sistemas 2025/Clase 4/Clase 4.md",
-    "Notion/Teoría de Sistemas/Teoría de Sistemas.md",
-    "Notion/Teoría de Sistemas/Simulacro parcial.md",
-    "Notion/Teoría de Sistemas/Final.md",
-    "Notion/Ingeniería de datos/Clase 5/Clase 5.md",
-    "Notion/Ingeniería de datos/Clase 4/Clase 4.md",
     "Excalidraw",
     "Notion/so/parcial 2",
     "Notion/Sistemas de Información I 2/Clase 2312313",
@@ -257,7 +291,6 @@
     "Notion/Teoría de Sistemas 2025/Clase 1",
     "Notion/Probabilidad y Estadística/Clase 2",
     "Notion/Probabilidad y Estadística/Clase 1",
-    "Notion/POO/Clase 1",
-    "Notion/Sistemas de Información I/Clase 5"
+    "Notion/POO/Clase 1"
   ]
 }
