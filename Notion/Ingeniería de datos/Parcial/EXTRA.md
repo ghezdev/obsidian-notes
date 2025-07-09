@@ -702,3 +702,117 @@ ON p.fabricante_cod = f.fabricante_cod
         -- Buscar palabras que empiezan con una vocal
         SELECT Palabra FROM Diccionario WHERE Palabra LIKE '[AEIOU]%';
         ```
+
+- - -
+# DISTINCT 
+
+### 1. En la cláusula `SELECT` para obtener filas únicas
+
+Este es el uso más común y fundamental de `DISTINCT`. Cuando lo colocas justo después de `SELECT` y antes de las columnas, le estás diciendo al motor de base de datos que solo devuelva las **filas únicas resultantes de las columnas seleccionadas**.
+
+**Ejemplo:** Imagina que tienes una tabla `Empleados` con columnas `nombre` y `departamento`. Si quieres ver una lista de todos los departamentos en tu empresa sin repeticiones:
+
+```sql 
+SELECT DISTINCT departamento
+FROM Empleados;
+```
+
+Si no usaras `DISTINCT`, y tuvieras varios empleados en el mismo departamento (por ejemplo, "Ventas"), "Ventas" aparecería múltiples veces. Con `DISTINCT`, "Ventas" aparecerá solo una vez.
+
+**Otro ejemplo:** Si quieres ver combinaciones únicas de nombre y apellido de clientes:
+
+```sql 
+SELECT DISTINCT nombre, apellido
+FROM Clientes;
+```
+
+En este caso, si hay dos clientes con el mismo nombre y apellido (ej. "Juan Pérez"), solo aparecerá una vez. Si hay "Juan Pérez" y "Juan González", ambos aparecerán porque la combinación `nombre, apellido` es distinta.
+
+### 2. Dentro de funciones de agregación (como `COUNT`, `SUM`, `AVG`)
+
+Este es el caso que vimos en tu consulta y es muy importante. Cuando `DISTINCT` se usa dentro de una función de agregación, le dice a la función que solo considere los **valores únicos** de la columna especificada antes de realizar la operación de agregación.
+
+- **`COUNT(DISTINCT columna)`**: Cuenta la cantidad de valores únicos en la `columna` especificada.
+    
+    - Ejemplo: `COUNT(DISTINCT id_cliente)` para saber cuántos clientes únicos han realizado compras.
+        
+    - Tu caso: `COUNT(DISTINCT f.factura_num)` para contar cuántas facturas (órdenes) únicas se han generado.
+        
+- **`SUM(DISTINCT columna)`**: Suma solo los valores únicos de la `columna` especificada. (Menos común, pero útil en escenarios específicos donde un valor podría estar duplicado por un error de modelado o una unión, y solo quieres sumarlo una vez).
+    
+    - Ejemplo: `SUM(DISTINCT monto_impuesto)` si un impuesto se aplica a múltiples ítems de la misma factura y solo quieres sumar el impuesto total de la factura una vez.
+        
+- **`AVG(DISTINCT columna)`**: Calcula el promedio de los valores únicos en la `columna` especificada.
+    
+    - Ejemplo: `AVG(DISTINCT calificacion)` si una misma calificación pudiera estar duplicada y solo quieres promediar las calificaciones únicas dadas.
+
+## **`DISTINCT` no puede usarse de forma "suelta" en la cláusula `SELECT` para una columna individual a menos que esté dentro de una función de agregación como `COUNT`**.
+
+
+- - -
+
+# Cuando la base de datos se vuelve inconsistente debido a fallas del sistema, el componente clave para la recuperación de la consistencia es el **Registro de Transacciones (Transaction Log o Journal)**, también conocido como **Bitácora**.
+
+Este componente es fundamental por las siguientes razones:
+
+- **Registro de todas las operaciones:** El log es un registro secuencial de todas las operaciones de modificación realizadas en la base de datos (inserciones, actualizaciones, eliminaciones), así como de los eventos importantes de las transacciones (inicio, confirmación -COMMIT-, aborto -ROLLBACK-). Cada entrada en el log se registra antes de que el cambio se escriba permanentemente en los archivos de datos.
+    
+- **Implementación de las propiedades ACID:** El log es vital para garantizar las propiedades ACID (Atomicidad, Consistencia, Aislamiento, Durabilidad), especialmente la Atomicidad y la Durabilidad, que son cruciales para la recuperación:
+    
+    - **Atomicidad:** Permite deshacer (`UNDO`) los cambios de transacciones que no se completaron (`ROLLBACK`) o que estaban en curso en el momento de la falla. Al usar el log, el sistema puede identificar qué cambios se hicieron y revertirlos.
+        
+    - **Durabilidad:** Permite rehacer (`REDO`) los cambios de transacciones que se confirmaron (`COMMIT`) antes de la falla, pero cuyos cambios quizás no se habían escrito completamente en los archivos de datos. El log asegura que estos cambios se apliquen a la base de datos una vez que se recupera.
+        
+- **Proceso de Recuperación (UNDO/REDO):** Cuando el sistema se reinicia después de una falla, el Gestor de Bases de Datos (DBMS) utiliza el log para realizar un proceso de recuperación que generalmente consta de dos fases principales:
+    
+    1. **Fase UNDO (Rollback):** El sistema revisa el log para identificar las transacciones que estaban activas o no confirmadas en el momento de la falla. Los cambios realizados por estas transacciones se deshacen para restaurar la base de datos a un estado consistente previo.
+        
+    2. **Fase REDO (Rollforward):** El sistema revisa el log para identificar las transacciones que fueron confirmadas antes de la falla, pero cuyos cambios podrían no haberse escrito en el disco duro (permanente). Los cambios de estas transacciones se vuelven a aplicar para asegurar que todos los datos confirmados estén presentes.
+        
+- **Puntos de Control (Checkpoints):** Aunque no es el log en sí, los checkpoints son puntos de sincronización que el DBMS crea periódicamente. Ayudan a reducir el tiempo de recuperación al limitar la parte del log que necesita ser procesada durante las fases UNDO/REDO. Es decir, el log es el componente clave, y los checkpoints optimizan su uso en la recuperación.
+    
+
+En resumen, el **Registro de Transacciones (Log)** es la "memoria" del DBMS sobre todas las operaciones realizadas, lo que le permite revertir o aplicar cambios para llevar la base de datos a un estado consistente después de una falla.
+
+- - -
+
+# Tablas y secuencias 
+
+- **a) Las tablas son independientes de las secuencias**
+    - **Verdadero.** Una tabla en sí misma (su estructura y datos) no depende directamente de una secuencia para existir. Puedes crear una tabla sin ninguna secuencia asociada, o asociarle una en un momento posterior. La secuencia se usa para generar valores, generalmente para una clave primaria, pero la tabla puede existir sin ese mecanismo.
+        
+- **b) Las secuencias son independientes de las tablas**
+    - **Verdadero.** Una secuencia se crea como un objeto de base de datos independiente. No está "ligada" intrínsecamente a una tabla en su definición. Una vez creada, la secuencia existe por sí misma y sus valores pueden ser utilizados por cualquier tabla o incluso fuera del contexto de una tabla (por ejemplo, en un procedimiento almacenado). Puedes crear una secuencia sin que ninguna tabla la use, o eliminar una tabla sin que la secuencia se elimine automáticamente.
+        
+- **c) Una secuencia puede utilizarse para generar valores en varias tablas**
+    - **Verdadero.** Esta es una característica clave de las secuencias y una de sus principales ventajas. Una única secuencia puede ser usada por diferentes tablas (por ejemplo, para generar IDs únicos para claves primarias en varias tablas que no tienen una relación directa pero necesitan un rango de IDs compartido o para optimizar la caché de IDs). Simplemente se llama a la función de la secuencia (como `NEXTVAL` en Oracle o `NEXT VALUE FOR` en SQL Server) desde las cláusulas `INSERT` de diferentes tablas.
+        
+- **d) Una tabla solo puede tener asociada una secuencia**
+    - **Falso.** Una tabla puede tener varias columnas que utilicen valores generados por secuencias. Por ejemplo, podría tener una clave primaria generada por una secuencia y otra columna de auditoría (como un ID de versión) generada por otra secuencia si fuera necesario. No hay una limitación técnica de "solo una secuencia por tabla". Además, una tabla podría no usar ninguna secuencia, o varias.
+
+
+
+# Ejercicio parcial 
+
+Realizar una consulta que devuelva para cada fabricante y cliente, el código y nombre del fabricante, código y nombre del cliente, monto total vendido y cantidad de órdenes del fabricante para ese cliente. 
+
+Solamente mostrar los fabricantes con tiempo de entrega menor a 5 días y que el cliente le haya comprado por un monto total mayor a $3.000. 
+
+Mostrar la información ordenada por código de fabricante ascendente y monto total en forma descendente. 
+
+```sql 
+SELECT fr.fabricante_cod, fr.fabricante_nom, c.cliente_num, c.nombre, SUM(fd.cantidad * fd.precio_unit) monto, COUNT(distinct f.factura_num) ordenes 
+FROM fabricantes fr 
+JOIN productos p 
+ON fr.fabricante_cod = p.fabricante_cod
+JOIN facturas_det fd 
+ON p.producto_cod = fd.producto_cod 
+JOIN facturas f 
+ON fd.factura_num = f.factura_num 
+JOIN clientes c 
+ON f.cliente_num = c.cliente_num 
+WHERE fr.tiempo_entrega < 5 
+GROUP BY fr.fabricante_cod, fr.fabricante_nom, c.cliente_num, c.nombre 
+HAVING SUM(fd.cantidad * fd.precio_unit) > 3000 
+ORDER BY fr.fabricante_cod ASC, monto DESC
+```

@@ -1,11 +1,56 @@
 # **Triggers en SQL Server**
 
+Es un objeto de BD compuesto por código que se ejecuta automáticamente ante ciertos eventos.
+
 Un **Trigger** (o disparador) es un tipo especial de procedimiento almacenado que se ejecuta automáticamente cuando ocurre un evento específico en la base de datos. A diferencia de los procedimientos almacenados normales que se ejecutan explícitamente, los triggers son implícitamente invocados por el sistema de base de datos.
 
 Los tipos más comunes son los **triggers DML** (Data Manipulation Language), que responden a eventos `INSERT`, `UPDATE` y `DELETE` en tablas. También existen **triggers DDL** (para `CREATE`, `ALTER`, `DROP` de objetos) y **triggers de inicio de sesión (LOGON triggers)**. Nos centraremos en los DML, que son los más utilizados.
 
+Dependiendo del DBMS existen diferentes tipos de triggers: 
+
+Eventos … 
+- DML: Insert, Delete, Update (sobre tablas y views)
+- DDL:Create, Alter, Drop, Grant, Revoke 
+- Sistema: Logon. Logoff, Startup, Shutdown.
+
+
+- Forman parte de la misma transacción que disparó el trigger. 
+- Los triggers de DMLs están asociados a tablas o vistas. 
+
+Ademas del evento y el objeto se define el momento de ejecución del trigger. 
+
+***Dependiendo del DBMS existen diferentes momentos:*** 
+- Before (en Sql Server no existe) 
+- **Instead of** 
+- **After**
+
+
+Se almacenan en las tablas del catálogo. 
+
+```sql 
+select * from sys.objects where type = 'TR' 
+
+select * from sys.triggers 
+
+select * from sys.all_sql_modules where object_id = 727673640
+```
+
 ---
 # **Motivos para Utilizar Triggers**
+
+Motivos para utilizar Triggers. 
+- Generar valores de columnas derivados. 
+- Prevenir operaciones inválidas. 
+- Forzar autorizaciones de seguridad. 
+- Forzar la integridad referencial entre diferentes BD. 
+- Implementar reglas de negocio. 
+- Proveer auditoría. 
+- Mantener replicas entre tablas. 
+- Generar estadísticas de operaciones. 
+- Modificar datos cuando las DML son ejecutadas contra Vistas. 
+- Implementar reglas de integridad.
+
+***Cuidado con los triggers en cascada !!***
 
 Los triggers son valiosos para implementar y mantener la lógica de negocio y la integridad de los datos de forma automática:
 
@@ -24,6 +69,18 @@ Los triggers son valiosos para implementar y mantener la lógica de negocio y la
 
 ---
 # **Pseudotablas (`inserted` y `deleted`)**
+
+- Pertenecen a SqlServer 
+- Son tablas que se generan automaticamente cuando usamos triggers. 
+- Nos permiten identificar las filas que estan involucradas en las operaciones. 
+- Tienen el mismo formato de la tabla/View base 
+- Se generan según las operaciones …
+
+|         | INSERTED | DELETED |
+| :------ | :------- | :------ |
+| Insert  | X        |         |
+| Delete  |          | X       |
+| Update  | X        | X       |
 
 Las **pseudotablas** son tablas lógicas temporales especiales que SQL Server crea y mantiene automáticamente durante la ejecución de un trigger DML. No son tablas reales en la base de datos, sino vistas en memoria que proporcionan una instantánea de los datos afectados por la operación DML.
 
@@ -55,7 +112,7 @@ Usaremos las tablas `Productos` y `AuditoriaLog` definidas al inicio.
 ```sql
 CREATE TRIGGER trg_Productos_AfterInsert
 ON Productos
-AFTER INSERT
+AFTER INSERT -- [INSTEAD OF/AFTER] [INSERT/DELETE/UPDATE //SE PUEDEN USAR VARIOS JUNTOS]
 AS
 BEGIN
     SET NOCOUNT ON; -- Evita que la sentencia INSERT subyacente interfiera con los mensajes del trigger

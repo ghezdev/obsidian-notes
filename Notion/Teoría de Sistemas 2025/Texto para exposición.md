@@ -1,0 +1,14 @@
+Buenas tardes, nosotros somos el grupo 6, conformado por Santiago Rapetti, Nadia Centanaro, Franco Mercado, Maximiliano Campos y yo, Guillermo Hernández y vamos a hablar sobre Stamm Biotech
+
+
+Uno de los problemas identificados en Stamm Biotech son las demoras que surgen de consultas o problemas internos simples, pero frecuentes, que la mayoría enfrenta en el día a día. Por ejemplo, cuando al empleado se le pierde la tarjeta de acceso, la computadora no le funciona bien, o necesita cargar un certificado para Recursos Humanos. Son situaciones que, aunque sean simples, hacen perder tiempo valioso buscando a quién preguntar o dónde ir, interrumpiendo el flujo de trabajo. Actualmente, no hay un canal claro para estas consultas rápidas, lo que genera confusión y retrasos.
+
+Nuestra **solución propuesta** es la implementación de un **Chatbot con Inteligencia Artificial (IA)**. Este bot no es solo una herramienta, sino un asistente que estará disponible para todos los empleados. Será capaz de:
+
+- **Interpretar consultas en lenguaje natural:** Se le podrá hablar al bot como si fuera un compañero, preguntándole directamente lo que se necesita. Por ejemplo, 'Necesito renovar mi tarjeta de acceso' o '¿Cómo cargo un certificado médico?'.
+- **Ofrecer respuestas automáticas para casos frecuentes:** Para esas consultas que ya tienen una solución definida, como 'actualizar la contraseña' o 'solicitar la renovación de una tarjeta', el chatbot guiará paso a paso de forma instantánea, sin necesidad de esperar a una respuesta humana. Esto dará autonomía y rapidez.
+- **Generar tickets y derivar al área que corresponda:** En aquellos casos donde la consulta sea más compleja y requiera la intervención de una persona (por ejemplo, si se trata de un problema técnico que necesita revisión física), el chatbot generará automáticamente un ticket y lo enviará al área adecuada. Esto significa que la consulta llegará directamente a la persona o equipo que puede resolverla, eliminando las demoras por derivaciones incorrectas.
+
+Respecto a la **metodología de desarrollo**, decidimos ir por un enfoque **iterativo, de prototipos, utilizando Kanban**. Esto quiere decir que no van a esperar a tener la solución perfecta desde el día uno. Se comenzará con un prototipo funcional, un bot con las preguntas más frecuentes y las funciones básicas. A medida que los empleados empiecen a interactuar con él, se irán incorporando nuevas funcionalidades, preguntas y mejoras de forma continua. Kanban va a permitir adaptar el desarrollo rápidamente a las necesidades que vayan surgiendo, garantizando un flujo de trabajo ágil y centrado en el feedback.
+
+Para concluir, con este chatbot nosotros buscamos transformar la forma en que se manejan las consultas internas en Stamm Biotech, haciendo que sea un proceso mucho más eficiente, rápido y que permita a todos enfocarse en sus tareas principales, mejorando así la productividad y experiencia diaria.

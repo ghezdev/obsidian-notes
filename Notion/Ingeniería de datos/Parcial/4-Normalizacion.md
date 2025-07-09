@@ -1,9 +1,9 @@
 # Claves
 
 - **Candidatas**
-    - Sea K un conjunto de atributos de la relación R. K es una clave candidata de R sí y solo sí, posee las dos propiadades siguientes
-        - Unicidad: NIngún valor de R contiene dos tuplas distintas con el mismo valor de K
-        - Irreductibilidad: NIngún subconjunto propio de K tiene la propiedad de unicidad
+    - Sea K un conjunto de atributos de la relación R. K es una clave candidata de R sí y solo sí, posee las dos propiedades siguientes
+        - Unicidad: Ningún valor de R contiene dos tuplas distintas con el mismo valor de K
+        - Irreductibilidad: Ningún subconjunto propio de K tiene la propiedad de unicidad
 - **Primarias**
     - Atributo que más probable que sea candidata
 - **Alternativas**
@@ -27,14 +27,14 @@ Sea **R** una relación y sean **X** e **Y** subconjuntos arbitrarios del conjun
 En símbolos: **X ⇒ Y**
 **Determinante** ⇒ **Dependiente**
 
+El determinante suele estar relacionado a los atributos **claves** mientras que los dependientes a los atributos **no claves**
+
 ![[/image 1 5.png|image 1 5.png]]
 
 En la tabla VP existe una dependencia funcional entre el conjunto de atributos {V#, P#} y el conjunto de atributos {CANT} si …
 
 - Para cualquier valor del par de atributos V# y P#, sólo existe **un** valor correspondiente del atributo CANT …
 - Aunque muchos valores distintos del par de atributos V# y P# pueden tener el mismo valor del atributo CANT
-  
-El determinante suele estar relacionado a los atributos **claves** mientras que los dependientes a los atributos **no claves**
 
 - - -
 # Normalizacion - Objetivos
