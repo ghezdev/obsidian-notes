@@ -49,7 +49,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "longitud",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -74,7 +74,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 271.5110321044922
+    "width": 284.51103591918945
   },
   "right": {
     "id": "c14afa40bcfef6c0",
@@ -183,8 +183,8 @@
             "state": {
               "type": "smart-chat-view",
               "state": {},
-              "icon": "lucide-file",
-              "title": "Plugin no longer active"
+              "icon": "lucide-ghost",
+              "title": "smart-chat-view"
             }
           },
           {
@@ -193,19 +193,21 @@
             "state": {
               "type": "smart-connections-view",
               "state": {},
-              "icon": "lucide-file",
-              "title": "Plugin no longer active"
+              "icon": "lucide-ghost",
+              "title": "smart-connections-view"
             }
           }
         ],
-        "currentTab": 6
+        "currentTab": 5
       }
     ],
     "direction": "horizontal",
-    "width": 435.5
+    "width": 435.5,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
+      "bases:Create new base": false,
       "switcher:Open quick switcher": false,
       "graph:Open graph view": false,
       "canvas:Create new canvas": false,
@@ -221,53 +223,53 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "a3db7bfcff25a703",
+  "active": "807f223daa11a0c8",
   "lastOpenFiles": [
-    "Notion/Ingeniería de datos/Parcial/4-Normalizacion.md",
-    "Notion/Ingeniería de datos/Parcial.zip",
-    "Notion/Ingeniería de datos/Parcial/NORMALIZACIÓN.md",
-    "Notion/Ingeniería de datos/Parcial/5-Objetos de BD.md",
-    "Notion/Ingeniería de datos/Parcial/9-SQL DDL.md",
-    "Notion/Ingeniería de datos/Parcial/Ejercicios clase 10.md",
-    "Notion/Ingeniería de datos/Parcial/EJERCICIOS TP.md",
-    "Notion/Ingeniería de datos/Parcial/Ejercicios clase 11.md",
-    "Notion/Ingeniería de datos/Parcial/Ejercicios clase 12.md",
-    "Notion/Ingeniería de datos/Parcial/10-TSql Store Procedures.md",
-    "Notion/Ingeniería de datos/Parcial/11-Triggers.md",
-    "Notion/Ingeniería de datos/Parcial/EXTRA.md",
-    "Notion/Ingeniería de datos/Parcial/14-TransaccionesRecoverySeguridad.md",
-    "Notion/Ingeniería de datos/Parcial/2-Modelo Relacional.md",
-    "Notion/Ingeniería de datos/Parcialotrop/1 - Modelo relacional.md",
-    "Notion/Ingeniería de datos/Parcial/1-Introduccion DBMS.md",
-    "Notion/Sistemas de Información I/expo 2 ayuda.md",
-    "Notion/Ingeniería de datos/Parcialotrop",
-    "Notion/Ingeniería de datos/Parcial/Untitled",
-    "Notion/Sistemas de Información I/exposición 2.md",
-    "Notion/Sistemas de Información I/Exposición.md",
-    "Notion/Probabilidad y Estadística/Resumen Parcial 1.md",
-    "Notion/Probabilidad y Estadística/Parcial 2/Clase 9 y 10/t.md",
-    "Notion/Probabilidad y Estadística/Parcial 2/Clase 9 y 10/Distribución de Pareto.md",
-    "Notion/Probabilidad y Estadística/Parcial 2/Clase 9 y 10/Distribución de Gumbel del mínimo.md",
-    "Notion/Probabilidad y Estadística/Parcial 2/Clase 9 y 10/Distribución de Gumbel del Máximo.md",
-    "Notion/Probabilidad y Estadística/Parcial 2/Clase 9 y 10/Distribución de Weibull.md",
-    "Notion/Teoría de Sistemas 2025/Texto para exposición.md",
-    "Notion/Probabilidad y Estadística/Parcial 2/wadawdasda",
-    "Pasted image 20250620211159.png",
-    "Pasted image 20250620183448.png",
-    "Pasted image 20250620183433.png",
-    "Imagen de WhatsApp 2025-06-20 a las 17.41.57_94104519.jpg",
-    "Pasted image 20250620165704.png",
-    "Pasted image 20250620155249.png",
-    "Pasted image 20250620155437.png",
-    "Imagen de WhatsApp 2025-06-20 a las 15.53.49_49af3e48.jpg",
-    "Pasted image 20250620151527.png",
-    "Notion/Probabilidad y Estadística/Parcial 2/Clase 9 y 10",
-    "Notion/Probabilidad y Estadística/Parcial 2",
-    "Notion/Ingeniería de datos/Parcial.rar",
-    "Notion/Ingeniería de datos/Parcial",
-    "Pasted image 20250608202713.png",
-    "Excalidraw",
-    "Notion/Teoría de Sistemas 2025/Clase 4",
+    "redes de datos 1 v2/Segundo parcial.md",
+    "Calculo 2/Parcial 2.md",
+    "Pasted image 20251023234455.png",
+    "Calculo 2/Notas Parcial 1.md",
+    "Untitled.base",
+    "Calculo 2/ej 2 tp 3.md",
+    "Pasted image 20251016205517.png",
+    "Pasted image 20251016205511.png",
+    "Pasted image 20251016205501.png",
+    "Pasted image 20251016205451.png",
+    "redes de datos 1 v2/Primer parcial.md",
+    "Sist de info 2 v2/Diagramas parcial 1.md",
+    "Sist de info 2 v2/Práctica.md",
+    "Sist de info 2 v2/Parcial 1.md",
+    "Calculo 2/Parcial 1.md",
+    "Pasted Image 20250917021252_077.png",
+    "Pasted Image 20250917003213_151.png",
+    "Pasted Image 20250917001856_055.png",
+    "Pasted Image 20250916231625_866.png",
+    "Pasted Image 20250916225944_649.png",
+    "Calculo 2/Drawing 2025-08-23 16.29.01.excalidraw.md",
+    "redes de datos 1 v2/Mapa conceptual 1er parcial.md",
+    "ENTREVISTA MODO.md",
+    "Sist de info 2 v2",
+    "redes de datos 1 v2",
+    "nordelgroup.md",
+    "Excalidraw/Drawing 2025-05-08 20.00.37.excalidraw.md",
+    "Excalidraw/Drawing 2025-05-08 20.49.28.excalidraw.md",
+    "Excalidraw/Drawing 2025-05-08 20.52.29.excalidraw.md",
+    "Técnica Feynman.md",
+    "Game devs.md",
+    "Calculo 2",
+    "Fundamentos de telecomunicaciones/PREVIO.md",
+    "Fundamentos de telecomunicaciones/Teoría de la información/Tabla de unidades.md",
+    "Fundamentos de telecomunicaciones/Exámenes/Finales/papa.md",
+    "Fundamentos de telecomunicaciones/Exámenes/Finales/lala.md",
+    "Fundamentos de telecomunicaciones/Modulación/v2/Modulación.md",
+    "Fundamentos de telecomunicaciones/Exámenes/Finales/Untitled 1.md",
+    "Fundamentos de telecomunicaciones/Exámenes/Finales/Abril 2024.md",
+    "Fundamentos de telecomunicaciones/Medios no guiados",
+    "Fundamentos de telecomunicaciones/Medios guiados",
+    "Fundamentos de telecomunicaciones/Métodos de acceso",
+    "Fundamentos de telecomunicaciones/Multiplexores",
+    "Fundamentos de telecomunicaciones/Exámenes",
+    "Fundamentos de telecomunicaciones/Exámenes/Primeros parciales",
     "Untitled.canvas"
   ]
 }

@@ -816,3 +816,6 @@ GROUP BY fr.fabricante_cod, fr.fabricante_nom, c.cliente_num, c.nombre 
 HAVING SUM(fd.cantidad * fd.precio_unit) > 3000 
 ORDER BY fr.fabricante_cod ASC, monto DESC
 ```
+
+
+Dado una BD A y otra B, con tabla tablaA y tablaB, tablaB PUEDE referenciar como FK a la tablaA aunque estén en una base de datos distintas.
