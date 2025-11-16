@@ -660,7 +660,7 @@ R1# copy run start
 
 
 
-# 🧩 **MÓDULO 11 – Direccionamiento IPv4 (ITN v7.0)**
+# **MÓDULO 11 – Direccionamiento IPv4 (ITN v7.0)**
 
 ---
 
@@ -933,7 +933,7 @@ El router reemplaza la IP privada con su IP pública antes de enviar el paquete.
 
 
 
-# 🧩 **MÓDULO 12 – Direccionamiento IPv6 (ITN v7.0)**
+# **MÓDULO 12 – Direccionamiento IPv6 (ITN v7.0)**
 
 ---
 
@@ -1192,7 +1192,7 @@ R1(config-if)# no shutdown
 
 
 
-# 🧩 **MÓDULO 13 – ICMP (ITN v7.0)**
+# **MÓDULO 13 – ICMP (ITN v7.0)**
 
 ---
 
@@ -1462,3 +1462,1680 @@ En resumen, **ICMP** es el “sistema nervioso” de la red IP — no transporta
 Sin ICMP, no podríamos diagnosticar ni detectar errores fácilmente. ⚡
 
 
+
+# **MÓDULO 14 – Capa de Transporte (ITN v7.0)**
+
+---
+
+## 🧠 **14.1 Función de la capa de transporte**
+
+### 📘 **Propósito general**
+
+La **Capa de Transporte (Capa 4 del modelo OSI)** se encarga de **proporcionar comunicación lógica** entre las aplicaciones que se ejecutan en diferentes hosts.  
+Actúa como **puente entre la capa de aplicación y las capas inferiores** (red, enlace y física).
+
+---
+
+### 🔹 **Funciones principales**
+
+1. **Seguimiento de conversaciones individuales**
+    
+    - Cada aplicación (por ejemplo, un navegador o una app de correo) puede tener **varias conversaciones simultáneas**.
+        
+    - La capa de transporte **identifica cada sesión** usando **números de puerto**.
+        
+2. **Segmentación y reensamblado de datos**
+    
+    - Divide los datos de la aplicación en **segmentos más pequeños** para su transmisión.
+        
+    - En el destino, los vuelve a **reconstruir en el orden correcto**.
+        
+3. **Multiplexación**
+    
+    - Permite que múltiples aplicaciones usen la red al mismo tiempo, compartiendo el mismo canal.
+        
+4. **Control de flujo**
+    
+    - Regula la cantidad de datos que se envían para evitar congestión en el receptor.
+        
+5. **Control de errores (solo en TCP)**
+    
+    - Detecta y retransmite segmentos perdidos o dañados.
+        
+
+---
+
+### 💡 **Ejemplo**
+
+Cuando abres YouTube y a la vez navegas en otra pestaña, la capa de transporte usa distintos **puertos** para que las dos conexiones puedan coexistir sin interferirse:
+
+- HTTP (YouTube) → puerto 80 o 443 (TCP)
+    
+- DNS → puerto 53 (UDP)
+    
+
+---
+
+## 🌍 **14.2 Protocolos de la capa de transporte**
+
+Los **dos protocolos principales** son:
+
+|Protocolo|Tipo|Características principales|
+|---|---|---|
+|**TCP (Transmission Control Protocol)**|Orientado a la conexión|Confiable, ordenado, con control de flujo y errores.|
+|**UDP (User Datagram Protocol)**|No orientado a la conexión|Rápido, sin confiabilidad ni control de flujo.|
+
+---
+
+## ⚙️ **14.3 TCP (Transmission Control Protocol)**
+
+### 📘 **Propósito**
+
+TCP ofrece una **comunicación confiable y ordenada** entre dos dispositivos.  
+Es usado cuando es **importante que los datos lleguen correctamente y en orden**.
+
+Ejemplos de aplicaciones que usan TCP:
+
+- HTTP / HTTPS
+    
+- FTP
+    
+- SMTP (correo)
+    
+- SSH
+    
+
+---
+
+### 🔹 **Características principales de TCP**
+
+|Característica|Descripción|
+|---|---|
+|**Orientado a conexión**|Antes de enviar datos, se establece una sesión entre emisor y receptor.|
+|**Fiable**|Reenvía los datos si se pierden.|
+|**Ordenado**|Los datos llegan en el mismo orden en que fueron enviados.|
+|**Control de flujo**|Ajusta la velocidad de transmisión según la capacidad del receptor.|
+|**Control de congestión**|Reduce la velocidad si hay saturación en la red.|
+|**Con estado**|Mantiene información sobre la sesión activa.|
+
+---
+
+### 🔹 **Establecimiento de la conexión: el _Three-Way Handshake_**
+
+TCP usa un **proceso de tres pasos** para iniciar una conexión confiable:
+
+|Paso|Acción|Bandera TCP|
+|---|---|---|
+|1️⃣|El cliente envía un segmento de sincronización|**SYN**|
+|2️⃣|El servidor responde confirmando la sincronización|**SYN + ACK**|
+|3️⃣|El cliente confirma la respuesta|**ACK**|
+
+💡 Después de este intercambio, ambos lados están sincronizados y pueden comenzar a enviar datos.
+
+---
+
+### 🔹 **Terminación de la conexión**
+
+Para cerrar la sesión, TCP realiza un intercambio de **cuatro pasos (four-way termination)**:
+
+1. Cliente envía **FIN**
+    
+2. Servidor responde **ACK**
+    
+3. Servidor envía **FIN**
+    
+4. Cliente responde **ACK**
+    
+
+Así se garantiza que **ningún dato quede sin entregar**.
+
+---
+
+### 🔹 **Control de flujo y confiabilidad**
+
+TCP usa los siguientes mecanismos:
+
+|Mecanismo|Descripción|
+|---|---|
+|**ACK (Acknowledgment)**|El receptor confirma la recepción de segmentos.|
+|**Ventana deslizante (Windowing)**|Permite enviar varios segmentos antes de requerir confirmación.|
+|**Número de secuencia**|Cada byte tiene un número para mantener el orden correcto.|
+|**Retransmisión**|Si no se recibe un ACK, el segmento se reenvía.|
+
+💡 **Ejemplo:**  
+Si un archivo grande se envía por TCP, los datos se dividen en segmentos y cada uno se numera.  
+Si el segmento 3 no llega, el receptor no lo confirma y el emisor lo retransmite.
+
+---
+
+### 🔹 **Encabezado TCP (campos principales)**
+
+|Campo|Descripción|
+|---|---|
+|**Puerto de origen / destino**|Identifican las aplicaciones comunicándose.|
+|**Número de secuencia**|Ordena los bytes enviados.|
+|**Número de acuse (ACK)**|Confirma los datos recibidos.|
+|**Banderas (SYN, ACK, FIN, RST, PSH, URG)**|Controlan el flujo de la sesión.|
+|**Ventana**|Controla cuántos bytes se pueden enviar sin confirmar.|
+|**Checksum**|Detecta errores en el encabezado.|
+
+---
+
+## ⚡ **14.4 UDP (User Datagram Protocol)**
+
+### 📘 **Propósito**
+
+UDP ofrece una **comunicación rápida y sin conexión**.  
+No garantiza la entrega ni el orden, pero tiene **menos sobrecarga**, ideal para aplicaciones **en tiempo real**.
+
+Ejemplos de uso:
+
+- Video en streaming 🎥
+    
+- VoIP (llamadas) ☎️
+    
+- Juegos en línea 🎮
+    
+- DNS y DHCP
+    
+
+---
+
+### 🔹 **Características principales de UDP**
+
+|Característica|Descripción|
+|---|---|
+|**Sin conexión**|No establece sesión previa.|
+|**No confiable**|No hay confirmaciones ni retransmisión.|
+|**Sin control de flujo**|Envía datos sin esperar al receptor.|
+|**Ligero y rápido**|Menor sobrecarga que TCP.|
+|**Usa puertos**|Identifica las aplicaciones como TCP.|
+
+💡 UDP se usa cuando **la velocidad es más importante que la confiabilidad**.  
+Por ejemplo, si se pierde un par de fotogramas en un video en vivo, no pasa nada.
+
+---
+
+### 🔹 **Encabezado UDP**
+
+El encabezado UDP es **simple y corto (8 bytes)** con solo **4 campos**:
+
+|Campo|Descripción|
+|---|---|
+|**Puerto de origen**|Puerto del emisor.|
+|**Puerto de destino**|Puerto del receptor.|
+|**Longitud**|Tamaño del segmento UDP.|
+|**Checksum**|Verifica errores básicos.|
+
+---
+
+### 🔹 **Comparación TCP vs UDP**
+
+|Característica|**TCP**|**UDP**|
+|---|---|---|
+|Tipo de conexión|Orientado a conexión|Sin conexión|
+|Confiabilidad|Alta (usa ACKs y retransmisión)|Baja (sin confirmación)|
+|Orden|Garantizado|No garantizado|
+|Control de flujo|Sí|No|
+|Velocidad|Más lento|Más rápido|
+|Tamaño del encabezado|20 bytes|8 bytes|
+|Aplicaciones típicas|HTTP, FTP, SSH, correo|DNS, DHCP, streaming, VoIP|
+
+---
+
+## 📦 **14.5 Puertos y multiplexación**
+
+### 📘 **Puertos**
+
+Los **números de puerto** permiten identificar qué aplicación usa una conexión.
+
+|Tipo de puerto|Rango|Uso|
+|---|---|---|
+|**Bien conocidos**|0 – 1023|Asignados a servicios estándar (HTTP, FTP, etc.)|
+|**Registrados**|1024 – 49151|Usados por aplicaciones de terceros.|
+|**Dinámicos / privados**|49152 – 65535|Asignados temporalmente por el sistema operativo.|
+
+💡 **Ejemplo:**  
+Cuando haces una petición web:
+
+- Tu PC usa un puerto origen aleatorio (por ejemplo, 56789).
+    
+- El servidor escucha en el puerto destino 80 (HTTP).
+    
+
+---
+
+### 🔹 **Ejemplo de puertos comunes**
+
+|Servicio|Protocolo|Puerto|
+|---|---|---|
+|HTTP|TCP|80|
+|HTTPS|TCP|443|
+|FTP|TCP|21|
+|DNS|UDP|53|
+|DHCP|UDP|67 (servidor) / 68 (cliente)|
+|SMTP|TCP|25|
+|SSH|TCP|22|
+
+---
+
+## 🧠 **14.6 Ejemplo práctico**
+
+Imagina que un cliente descarga un archivo desde un servidor web:
+
+1. El cliente abre el navegador → Capa de aplicación (HTTP).
+    
+2. La capa de transporte asigna:
+    
+    - Puerto origen aleatorio.
+        
+    - Puerto destino 80.
+        
+3. Se establece conexión TCP (handshake).
+    
+4. El archivo se divide en **segmentos TCP** numerados y enviados.
+    
+5. El servidor responde con ACKs confirmando la recepción.
+    
+6. Al finalizar, ambas partes cierran la sesión (FIN → ACK → FIN → ACK).
+    
+
+---
+
+## 📘 **Resumen general del Módulo 14**
+
+|Concepto|Descripción|
+|---|---|
+|**Capa de transporte**|Administra las comunicaciones entre aplicaciones.|
+|**Segmentación / Reensamblado**|Divide datos y los reordena al recibir.|
+|**Multiplexación**|Permite múltiples aplicaciones simultáneas.|
+|**TCP**|Confiable, ordenado, orientado a conexión.|
+|**UDP**|No confiable, rápido, sin conexión.|
+|**Puertos**|Identifican aplicaciones (0–65535).|
+|**Handshake (TCP)**|3 pasos: SYN → SYN-ACK → ACK.|
+|**Control de flujo y congestión**|Regulan la velocidad de envío (solo TCP).|
+|**Encabezado UDP**|8 bytes, simple y rápido.|
+|**Aplicaciones comunes TCP/UDP**|HTTP, DNS, FTP, DHCP, VoIP, etc.|
+
+---
+
+### 💡 **Resumen visual TCP vs UDP**
+
+|Característica|TCP|UDP|
+|---|---|---|
+|Conexión|Orientada|No orientada|
+|Fiabilidad|Alta|Baja|
+|Reenvío|Sí|No|
+|Orden|Garantizado|No|
+|Velocidad|Más lenta|Más rápida|
+|Ejemplos|Web, correo, FTP|Streaming, VoIP, DNS|
+
+
+
+
+
+
+# **MÓDULO 15 – Capa de Aplicación (ITN v7.0)**
+
+---
+
+## 🧠 **15.1 Función de la capa de aplicación**
+
+### 📘 **Propósito general**
+
+La **Capa de Aplicación (Capa 7 del modelo OSI)** es la que **interactúa directamente con el usuario** o con las aplicaciones del sistema operativo.
+
+No se encarga de mover datos físicamente, sino de:
+
+- Proporcionar **servicios de red a las aplicaciones**.
+    
+- Interpretar los datos que llegan desde la red.
+    
+- Formatear la información para que las aplicaciones puedan entenderla.
+    
+
+💡 Es la interfaz entre el **usuario final y la red**.
+
+---
+
+### 🔹 **Tres capas del modelo TCP/IP superior (comparación)**
+
+|Modelo OSI|Modelo TCP/IP|Descripción|
+|---|---|---|
+|Aplicación|Aplicación|Interactúa con el software del usuario (HTTP, DNS).|
+|Presentación|Aplicación|Formatea los datos (codificación, compresión, cifrado).|
+|Sesión|Aplicación|Administra las sesiones de comunicación.|
+
+👉 En TCP/IP, estas tres capas del modelo OSI se **combinan en una sola capa de Aplicación**.
+
+---
+
+## 💬 **15.2 Modelos de comunicación: Cliente/Servidor y P2P**
+
+---
+
+### ⚙️ **Modelo Cliente/Servidor**
+
+#### 📘 **Concepto**
+
+Un **servidor** proporciona servicios (archivos, correo, web, etc.), y un **cliente** los solicita.
+
+#### 💡 **Ejemplo:**
+
+- Cliente: Navegador web → solicita una página.
+    
+- Servidor: Apache o Nginx → envía la página web.
+    
+
+|Rol|Función|
+|---|---|
+|**Cliente**|Inicia la comunicación y solicita datos.|
+|**Servidor**|Espera solicitudes y responde.|
+
+🧠 Ejemplos de servicios cliente-servidor:
+
+- **HTTP/HTTPS:** Navegación web
+    
+- **FTP:** Transferencia de archivos
+    
+- **SMTP/POP3/IMAP:** Correo electrónico
+    
+- **DNS:** Resolución de nombres
+    
+
+📍 Los **servidores** suelen tener **IP fija**, mientras que los clientes suelen recibir una IP dinámica.
+
+---
+
+### ⚙️ **Modelo Peer-to-Peer (P2P)**
+
+#### 📘 **Concepto**
+
+En el modelo **P2P**, **todos los dispositivos (peers)** actúan como **clientes y servidores a la vez**.  
+No hay un servidor central.
+
+#### 💡 **Ejemplo:**
+
+- Dos PCs comparten archivos directamente por una red local o internet.
+    
+- Plataformas como **BitTorrent** usan este modelo.
+    
+
+|Ventajas|Desventajas|
+|---|---|
+|Fácil de configurar.|Menor seguridad.|
+|No requiere servidor central.|Difícil de administrar en redes grandes.|
+|Eficiente para compartir archivos.|Menor rendimiento con muchos usuarios.|
+
+---
+
+## 🌍 **15.3 Protocolos comunes de la capa de aplicación**
+
+La capa de aplicación incluye **protocolos que permiten a los usuarios acceder a servicios de red**.
+
+---
+
+### 🔹 **1. HTTP y HTTPS – Navegación web**
+
+|Protocolo|Puerto|Descripción|
+|---|---|---|
+|**HTTP (Hypertext Transfer Protocol)**|80|Transfiere páginas web entre cliente y servidor.|
+|**HTTPS (HTTP Secure)**|443|Igual que HTTP, pero usa **TLS/SSL** para cifrar la comunicación.|
+
+#### Ejemplo:
+
+```
+Cliente:  GET /index.html HTTP/1.1
+Servidor: 200 OK
+```
+
+📘 HTTP funciona en modelo **cliente-servidor**, donde el navegador es el cliente y el servidor web responde a las peticiones.
+
+---
+
+### 🔹 **2. DNS – Resolución de nombres**
+
+|Puerto|Protocolo|Descripción|
+|---|---|---|
+|53|UDP (a veces TCP)|Traduce nombres de dominio a direcciones IP.|
+
+#### Ejemplo:
+
+```
+www.google.com → 142.250.64.78
+```
+
+💡 Sin DNS, los usuarios tendrían que recordar direcciones IP numéricas en lugar de nombres.
+
+---
+
+### 🔹 **3. DHCP – Asignación automática de IP**
+
+|Puerto|Protocolo|Descripción|
+|---|---|---|
+|67 (servidor) / 68 (cliente)|UDP|Asigna automáticamente IPs, máscara, gateway y DNS.|
+
+#### Proceso **DORA**:
+
+1. **Discover:** Cliente busca servidores DHCP.
+    
+2. **Offer:** Servidor ofrece una IP.
+    
+3. **Request:** Cliente solicita esa IP.
+    
+4. **Acknowledge:** Servidor confirma y asigna la IP.
+    
+
+💡 DHCP simplifica la administración de redes grandes, evitando configuraciones manuales.
+
+---
+
+### 🔹 **4. FTP – Transferencia de archivos**
+
+|Puerto|Protocolo|Descripción|
+|---|---|---|
+|21|TCP|Transfiere archivos entre cliente y servidor.|
+
+- Requiere autenticación (usuario y contraseña).
+    
+- Soporta transferencia en ambos sentidos (upload/download).
+    
+- **FTP Seguro (FTPS/SFTP)** añade cifrado para proteger las credenciales y los datos.
+    
+
+📘 Ejemplo de uso:
+
+```bash
+ftp ftp.cisco.com
+```
+
+---
+
+### 🔹 **5. Correo electrónico: SMTP, POP3, IMAP**
+
+|Protocolo|Puerto|Descripción|
+|---|---|---|
+|**SMTP (Simple Mail Transfer Protocol)**|25 (envío)|Envía correos entre servidores o desde cliente a servidor.|
+|**POP3 (Post Office Protocol v3)**|110|Descarga los correos del servidor y los elimina.|
+|**IMAP (Internet Message Access Protocol)**|143|Permite leer correos directamente desde el servidor (no los borra).|
+
+💡 **Diferencia clave:**
+
+- POP3 → descarga y borra los mensajes.
+    
+- IMAP → mantiene los mensajes en el servidor (ideal para usar en varios dispositivos).
+    
+
+---
+
+### 🔹 **6. SMB y AFP – Compartición de archivos**
+
+|Protocolo|Uso|Plataforma|
+|---|---|---|
+|**SMB (Server Message Block)**|Comparte archivos e impresoras.|Windows|
+|**AFP (Apple Filing Protocol)**|Compartición de archivos.|macOS|
+
+---
+
+### 🔹 **7. SSH y Telnet – Acceso remoto**
+
+|Protocolo|Puerto|Descripción|
+|---|---|---|
+|**SSH (Secure Shell)**|22|Acceso remoto cifrado a dispositivos.|
+|**Telnet**|23|Acceso remoto **sin cifrar** (no recomendado).|
+
+💡 SSH es la **versión segura de Telnet** y se usa para administrar routers y switches.
+
+Ejemplo:
+
+```bash
+ssh admin@192.168.1.1
+```
+
+---
+
+## 💡 **15.4 Funciones comunes de la capa de aplicación**
+
+|Función|Descripción|
+|---|---|
+|**Codificación de datos**|Convierte los datos en un formato estándar (ASCII, Unicode, etc.).|
+|**Compresión**|Reduce el tamaño de los datos transmitidos.|
+|**Cifrado**|Protege los datos durante la transmisión (ej: HTTPS).|
+|**Control de sesión**|Mantiene la conexión activa entre cliente y servidor.|
+
+---
+
+## ⚙️ **15.5 Ejemplo de flujo completo (HTTP + DNS + TCP/IP)**
+
+1. El usuario escribe `www.cisco.com` en el navegador.
+    
+2. **DNS** traduce el nombre a una IP.
+    
+3. El navegador (cliente HTTP) abre una **conexión TCP (puerto 80 o 443)** con el servidor web.
+    
+4. El servidor responde y envía la página solicitada.
+    
+5. El usuario recibe y visualiza la página.
+    
+
+📍 Aquí intervienen todas las capas:
+
+- Aplicación → HTTP, DNS
+    
+- Transporte → TCP
+    
+- Red → IP
+    
+- Enlace → Ethernet/Wi-Fi
+    
+
+---
+
+## 📘 **15.6 Capa de aplicación en IPv6**
+
+Los mismos protocolos funcionan sobre IPv6, sin cambios importantes.  
+Ejemplo:
+
+- HTTP puede usar `http://[2001:db8::1]/index.html`
+    
+- DNS también soporta registros **AAAA** para direcciones IPv6.
+    
+
+---
+
+## 🧠 **Resumen general del Módulo 15**
+
+|Protocolo|Función|Puerto|Tipo|
+|---|---|---|---|
+|**HTTP / HTTPS**|Web|80 / 443|TCP|
+|**DNS**|Resolución de nombres|53|UDP / TCP|
+|**DHCP**|Asignación de IP|67 / 68|UDP|
+|**FTP / SFTP**|Transferencia de archivos|21|TCP|
+|**SMTP**|Envío de correo|25|TCP|
+|**POP3 / IMAP**|Recepción de correo|110 / 143|TCP|
+|**SSH / Telnet**|Acceso remoto|22 / 23|TCP|
+|**SMB / AFP**|Compartición de archivos|445 / 548|TCP|
+|**NTP**|Sincronización de hora|123|UDP|
+
+---
+
+## 🧩 **15.7 Resumen visual: Cliente/Servidor vs P2P**
+
+|Característica|Cliente/Servidor|P2P|
+|---|---|---|
+|Control|Centralizado (servidor)|Distribuido|
+|Seguridad|Alta (control central)|Menor (sin control)|
+|Escalabilidad|Limitada por el servidor|Muy alta|
+|Ejemplos|Web, correo, FTP|BitTorrent, eMule|
+
+---
+
+### 💡 **Ejemplo práctico final**
+
+**Escenario:**  
+Una PC se conecta a Internet y abre `www.google.com`.
+
+1. **DHCP** asigna una IP a la PC.
+    
+2. **DNS** resuelve el nombre `www.google.com`.
+    
+3. **TCP (puerto 443)** establece conexión con el servidor HTTPS.
+    
+4. **HTTP/HTTPS** transfiere la página.
+    
+5. El usuario ve el contenido en su navegador.
+    
+
+✅ Todo ese proceso ocurre gracias a los **protocolos de la capa de aplicación**.
+
+---
+
+## 📘 **Resumen Final**
+
+|Concepto clave|Descripción|
+|---|---|
+|**Capa de Aplicación**|Interfaz entre el usuario y la red.|
+|**Protocolos más usados**|HTTP, DNS, DHCP, FTP, SMTP, POP3, IMAP, SSH.|
+|**Modelo Cliente/Servidor**|Servidor presta servicios; cliente los solicita.|
+|**Modelo P2P**|Todos los nodos son iguales.|
+|**DHCP (DORA)**|Discover, Offer, Request, Acknowledge.|
+|**DNS**|Traduce nombres ↔ IP.|
+|**Puertos**|Identifican servicios (HTTP 80, HTTPS 443, DNS 53, etc.).|
+|**Seguridad**|HTTPS y SSH ofrecen cifrado.|
+
+---
+
+¿Quieres que sigamos con la **Unidad 16 (Seguridad de red)**?  
+Esa te enseña sobre **amenazas, vulnerabilidades, tipos de ataques y medidas de protección**, muy frecuente en parciales.
+
+
+
+
+# **MÓDULO 16 – Fundamentos de Seguridad de Red (ITN v7.0)**
+
+---
+
+## 🧠 **16.1 Conceptos básicos de seguridad de red**
+
+### 📘 **Propósito**
+
+La seguridad de red consiste en **proteger la red, sus dispositivos y datos** frente a accesos no autorizados, ataques o daños.
+
+La idea es mantener tres principios fundamentales conocidos como la **Tríada CIA**:
+
+|Principio|Descripción|Ejemplo|
+|---|---|---|
+|**Confidencialidad**|Solo usuarios autorizados acceden a la información.|Cifrado de datos (HTTPS, VPN).|
+|**Integridad**|Los datos no deben ser alterados sin autorización.|Sumas de comprobación (hashing).|
+|**Disponibilidad**|Los recursos deben estar accesibles para los usuarios válidos.|Redundancia, backups, firewalls.|
+
+---
+
+### 🔹 **Amenazas comunes en una red**
+
+1. **Acceso no autorizado**
+    
+    - Intrusos acceden a información o sistemas sin permiso.
+        
+2. **Interrupción del servicio**
+    
+    - Causar que los sistemas dejen de funcionar (ataques DoS).
+        
+3. **Robo de información**
+    
+    - Copiar o interceptar datos confidenciales (credenciales, correos, etc.).
+        
+4. **Daños físicos o lógicos**
+    
+    - Destruir o modificar archivos, servidores o dispositivos.
+        
+
+---
+
+### 💡 **Ejemplo:**
+
+Un atacante podría interceptar los datos de una conexión HTTP (sin cifrar) y ver contraseñas o mensajes enviados → se compromete la **confidencialidad**.
+
+---
+
+## 🔐 **16.2 Tipos de vulnerabilidades**
+
+Las **vulnerabilidades** son **debilidades** que pueden ser explotadas por amenazas.  
+Pueden clasificarse según su origen:
+
+|Tipo de vulnerabilidad|Descripción|Ejemplo|
+|---|---|---|
+|**Tecnológica**|Errores o fallos en el software o hardware.|Sistema operativo desactualizado.|
+|**De configuración**|Mala configuración de dispositivos.|Router con contraseña “admin123”.|
+|**De políticas de seguridad**|Falta de reglas claras o de cumplimiento.|Usuarios que comparten contraseñas.|
+|**Humanas**|Errores o engaños a usuarios.|Phishing, ingeniería social.|
+
+📍 **Cualquier red es tan segura como su punto más débil.**
+
+---
+
+### 🔹 **Amenazas físicas vs lógicas**
+
+|Tipo|Ejemplo|Contramedida|
+|---|---|---|
+|**Física**|Robo de equipos, incendios, humedad.|Controles de acceso, alarmas, UPS.|
+|**Lógica**|Virus, ataques remotos, contraseñas débiles.|Antivirus, firewalls, autenticación.|
+
+---
+
+## 💣 **16.3 Tipos de ataques comunes**
+
+Los ataques a redes pueden clasificarse según su **objetivo** o **método**:
+
+---
+
+### 🔹 **1. Ataques de reconocimiento (reconnaissance)**
+
+El atacante busca **información sobre la red** (IP, puertos, servicios, etc.).
+
+Ejemplo:
+
+- Escaneo de puertos con herramientas como **Nmap**.
+    
+- Consultas DNS o SNMP para obtener información.
+    
+
+**Contramedidas:**
+
+- Firewalls y filtrado de puertos.
+    
+- Desactivar servicios innecesarios.
+    
+
+---
+
+### 🔹 **2. Ataques de acceso (access attacks)**
+
+El atacante intenta **acceder a recursos no autorizados**.
+
+Ejemplos:
+
+- **Robo de contraseñas** (fuerza bruta, diccionario).
+    
+- **Explotación de vulnerabilidades** en sistemas o routers.
+    
+- **Phishing** o **ingeniería social**.
+    
+
+**Contramedidas:**
+
+- Autenticación fuerte.
+    
+- Políticas de contraseñas.
+    
+- Cifrado de datos.
+    
+
+---
+
+### 🔹 **3. Ataques de denegación de servicio (DoS y DDoS)**
+
+Buscan **saturar la red o un servidor** para que no pueda atender usuarios legítimos.
+
+- **DoS (Denial of Service):** desde un solo origen.
+    
+- **DDoS (Distributed DoS):** desde muchos equipos (botnets).
+    
+
+💡 Ejemplo:  
+Un ataque DDoS puede enviar millones de solicitudes falsas a un servidor web, dejándolo fuera de servicio.
+
+**Contramedidas:**
+
+- Firewalls y sistemas de detección (IDS/IPS).
+    
+- Filtrado de tráfico y balanceadores de carga.
+    
+
+---
+
+### 🔹 **4. Ataques de malware**
+
+El atacante introduce **software malicioso** para dañar o controlar dispositivos.
+
+|Tipo|Descripción|
+|---|---|
+|**Virus**|Se adjunta a un archivo y se propaga al ejecutarlo.|
+|**Gusano (worm)**|Se propaga automáticamente por la red.|
+|**Troyano**|Finge ser un programa legítimo.|
+|**Spyware**|Espía la actividad del usuario.|
+|**Ransomware**|Cifra los datos y exige rescate.|
+
+**Contramedidas:**
+
+- Antivirus actualizado.
+    
+- No abrir archivos sospechosos.
+    
+- Copias de seguridad regulares.
+    
+
+---
+
+### 🔹 **5. Ataques de intermediario (Man-in-the-Middle – MITM)**
+
+El atacante **intercepta y modifica la comunicación** entre dos dispositivos.
+
+Ejemplo:
+
+- Capturar tráfico entre cliente y servidor en una red Wi-Fi pública.
+    
+
+**Contramedidas:**
+
+- Cifrado (HTTPS, VPN, SSH).
+    
+- No usar redes públicas sin protección.
+    
+
+---
+
+### 🔹 **6. Ataques de suplantación (Spoofing)**
+
+El atacante **finge ser otro dispositivo o usuario**.
+
+Tipos:
+
+- **IP spoofing:** falsifica dirección IP.
+    
+- **MAC spoofing:** cambia la dirección MAC.
+    
+- **Email spoofing:** falsifica direcciones de correo.
+    
+
+**Contramedidas:**
+
+- Filtrado de direcciones.
+    
+- Autenticación.
+    
+- Políticas de correo seguras (SPF, DKIM).
+    
+
+---
+
+## ⚙️ **16.4 Seguridad en dispositivos de red**
+
+Los dispositivos de red (routers, switches, APs) deben configurarse correctamente para evitar accesos no autorizados.
+
+---
+
+### 🔹 **Buenas prácticas de seguridad en routers y switches**
+
+1. **Cambiar contraseñas por defecto**
+    
+    ```bash
+    Router(config)# enable secret <clave_segura>
+    Router(config)# line vty 0 4
+    Router(config-line)# password <clave_segura>
+    ```
+    
+2. **Usar acceso remoto seguro (SSH, no Telnet)**
+    
+    ```bash
+    Router(config)# ip domain-name red.local
+    Router(config)# crypto key generate rsa
+    Router(config)# line vty 0 4
+    Router(config-line)# transport input ssh
+    ```
+    
+3. **Cifrar contraseñas**
+    
+    ```bash
+    Router(config)# service password-encryption
+    ```
+    
+4. **Deshabilitar servicios innecesarios**  
+    Ejemplo: HTTP, CDP o SNMP si no se usan.
+    
+5. **Configurar banners de advertencia**
+    
+    ```bash
+    Router(config)# banner motd #Acceso no autorizado prohibido#
+    ```
+    
+6. **Guardar la configuración**
+    
+    ```bash
+    Router# copy running-config startup-config
+    ```
+    
+
+---
+
+### 💡 **Seguridad física**
+
+- Guardar los equipos en **salas cerradas** y con **control de acceso**.
+    
+- Usar **UPS (alimentación ininterrumpida)**.
+    
+- Evitar exposición a polvo, humedad o calor.
+    
+
+---
+
+## 🧱 **16.5 Protección de datos y usuarios**
+
+### 🔹 **Métodos de autenticación**
+
+Verifican la identidad del usuario.
+
+|Tipo|Descripción|Ejemplo|
+|---|---|---|
+|**Contraseña**|Más común, pero débil si es simple.|Login de red.|
+|**Autenticación de dos factores (2FA)**|Combina contraseña + código o huella.|Google Authenticator.|
+|**Certificados digitales**|Usados en HTTPS y VPNs.|SSL/TLS.|
+
+---
+
+### 🔹 **Cifrado**
+
+Protege los datos durante la transmisión o almacenamiento.
+
+|Tipo|Ejemplo|Uso|
+|---|---|---|
+|**Simétrico**|AES, DES|Misma clave para cifrar/descifrar.|
+|**Asimétrico**|RSA|Clave pública y privada.|
+|**Hashing**|SHA-256, MD5|Verifica integridad, no se puede revertir.|
+
+💡 **HTTPS, SSH y VPNs** usan cifrado para garantizar la confidencialidad.
+
+---
+
+## 🧠 **16.6 Herramientas y tecnologías de seguridad**
+
+|Herramienta / Tecnología|Función|
+|---|---|
+|**Firewall**|Filtra tráfico permitido o bloqueado.|
+|**IDS / IPS**|Detecta (IDS) o bloquea (IPS) ataques.|
+|**Antivirus / Antimalware**|Protege contra programas maliciosos.|
+|**VPN (Virtual Private Network)**|Crea un canal seguro sobre Internet.|
+|**ACL (Access Control List)**|Define qué tráfico puede entrar o salir de una interfaz.|
+|**Backup y redundancia**|Evitan pérdida de datos y mejoran disponibilidad.|
+
+---
+
+## 📘 **16.7 Seguridad del usuario final**
+
+El **usuario** suele ser el eslabón más débil.  
+Por eso, se aplican medidas de **concientización y políticas de seguridad**:
+
+|Recomendación|Ejemplo|
+|---|---|
+|**Usar contraseñas seguras**|Mínimo 8 caracteres, mezcla de símbolos.|
+|**Actualizar software**|Parchear vulnerabilidades.|
+|**Evitar sitios o correos sospechosos**|Protección contra phishing.|
+|**Usar antivirus y cortafuegos personales**|Protección básica.|
+|**Bloquear sesiones inactivas**|Evitar accesos no autorizados.|
+
+---
+
+## 💡 **16.8 Ejemplo de política de seguridad**
+
+**Objetivo:** proteger los recursos de una red escolar o empresarial.
+
+1. Todos los usuarios deben autenticarse.
+    
+2. Contraseñas deben cambiarse cada 90 días.
+    
+3. El acceso remoto solo por SSH o VPN.
+    
+4. Se bloquean sitios maliciosos o inapropiados.
+    
+5. Se realizan respaldos semanales.
+    
+6. Solo el personal autorizado puede modificar equipos de red.
+    
+
+---
+
+## 📘 **Resumen general del Módulo 16**
+
+|Concepto|Descripción|
+|---|---|
+|**Seguridad de red**|Protección de datos, dispositivos y usuarios.|
+|**Tríada CIA**|Confidencialidad, Integridad, Disponibilidad.|
+|**Amenazas comunes**|Malware, DoS, spoofing, phishing, MITM.|
+|**Vulnerabilidades**|Tecnológicas, de configuración, humanas.|
+|**Ataques**|Reconocimiento, acceso, DoS, malware, MITM.|
+|**Dispositivos seguros**|Contraseñas, SSH, cifrado, banners, backups.|
+|**Herramientas**|Firewall, IDS/IPS, VPN, antivirus.|
+|**Autenticación y cifrado**|Contraseñas, 2FA, RSA, AES, SSL/TLS.|
+|**Seguridad física**|Acceso controlado, UPS, entorno seguro.|
+
+---
+
+### 💡 **Resumen visual: Capa de seguridad en acción**
+
+|Capa|Ejemplo de medida|
+|---|---|
+|**Física**|Control de acceso, cámaras.|
+|**Red**|Firewalls, ACLs, IDS/IPS.|
+|**Transporte**|SSL/TLS (HTTPS, SSH).|
+|**Aplicación**|Autenticación, antivirus, políticas.|
+|**Usuario**|Capacitación y concientización.|
+
+---
+
+¿Quieres que sigamos con la **Unidad 17 (Construir una red pequeña)**?  
+Esa es la última del parcial y reúne **todos los conceptos anteriores** (IP, routers, protocolos y seguridad) para **diseñar una red funcional real**.
+
+
+
+
+
+# **MÓDULO 17 – Construir una red pequeña (ITN v7.0)**
+
+---
+
+## 🧠 **17.1 Dispositivos de una red pequeña**
+
+### 📘 **Concepto general**
+
+Una **red pequeña** es aquella que conecta **un número limitado de dispositivos** (normalmente de 5 a 50), y suele tener **una única conexión WAN** hacia Internet (por DSL, fibra o cable).
+
+Estas redes deben ser:
+
+- **Eficientes**
+    
+- **Seguras**
+    
+- **Fáciles de administrar**
+    
+
+🧠 En este tipo de redes, **un solo técnico o administrador** suele encargarse de la instalación, mantenimiento y soporte.
+
+---
+
+### 🔹 **Componentes de una red pequeña**
+
+|Tipo de dispositivo|Función|
+|---|---|
+|**Dispositivos finales**|Computadoras, impresoras, cámaras IP, teléfonos VoIP.|
+|**Dispositivos intermedios**|Switches, routers, puntos de acceso inalámbrico.|
+|**Servidores**|DHCP, DNS, correo, archivos, web.|
+|**Medios de conexión**|Cables UTP, fibra óptica o redes Wi-Fi.|
+|**Conexión WAN**|Acceso a Internet (ISP mediante router o módem).|
+
+---
+
+### 🔹 **Topologías de red pequeñas**
+
+Las redes pequeñas suelen usar topologías **en estrella** o **mixtas**, donde todos los dispositivos se conectan a un **switch central** o **router inalámbrico**.
+
+📘 Imagen sugerida (ver diapositiva):  
+_Topología de una red pequeña con router, switch y PC._
+
+---
+
+## ⚙️ **17.1.1 Selección de dispositivos**
+
+Cuando se diseña una red pequeña, se deben considerar varios **factores técnicos y económicos**.
+
+|Factor|Descripción|
+|---|---|
+|**Costo**|El presupuesto influye en el tipo de equipo (doméstico o empresarial).|
+|**Velocidad y tipo de puertos**|Determina la capacidad de la red (Fast Ethernet, Gigabit, etc.).|
+|**Capacidad de expansión**|Permite agregar más usuarios o dispositivos en el futuro.|
+|**Características del sistema operativo del dispositivo**|Ejemplo: IOS de Cisco con funciones avanzadas de seguridad, QoS, VLANs.|
+
+💡 **Ejemplo:**  
+En una empresa pequeña (10 PCs y 2 impresoras), un **switch de 24 puertos** y un **router con Wi-Fi y DHCP** puede ser suficiente.
+
+---
+
+## 🌐 **17.1.2 Asignación de direcciones IP**
+
+### 📘 **Importancia**
+
+Antes de implementar una red, se debe crear un **plan de direccionamiento IP** bien organizado.  
+Esto facilita la **administración**, la **resolución de problemas** y la **seguridad**.
+
+---
+
+### 🔹 **Pasos para crear un esquema de direccionamiento**
+
+1. **Identificar los dispositivos finales**
+    
+    - PCs, impresoras, cámaras, servidores, puntos de acceso.
+        
+2. **Definir las redes o subredes**
+    
+    - Ejemplo:
+        
+        - VLAN 10 – Administración
+            
+        - VLAN 20 – Ventas
+            
+        - VLAN 30 – Visitantes
+            
+3. **Asignar direcciones IP por tipo de dispositivo**
+    
+    - Ejemplo:
+        
+        |Dispositivo|IP ejemplo|
+        |---|---|
+        |Router|192.168.1.1|
+        |Servidor|192.168.1.10|
+        |Impresora|192.168.1.20|
+        |PC Usuario|192.168.1.100–150|
+        
+4. **Planificar rangos DHCP**
+    
+    - Para hosts dinámicos (PCs, móviles).
+        
+    - Ejemplo: `192.168.1.100 - 192.168.1.200`
+        
+5. **Documentar la red**
+    
+    - Registrar qué IP tiene cada dispositivo y a qué VLAN pertenece.
+        
+
+📘 Imagen sugerida: _Ejemplo de tabla de direccionamiento IP._
+
+---
+
+## 🔁 **17.1.3 Redundancia en redes pequeñas**
+
+Aunque las redes pequeñas suelen tener pocos dispositivos, **la redundancia** mejora la **confiabilidad** y **disponibilidad**.
+
+|Tipo de redundancia|Ejemplo|
+|---|---|
+|**Equipos duplicados**|Dos routers o switches principales.|
+|**Enlaces duplicados**|Dos conexiones WAN o dos cables entre switches.|
+|**Energía**|UPS o fuentes redundantes.|
+
+💡 Esto ayuda a evitar que un **único punto de falla** deje sin servicio a toda la red.
+
+---
+
+## 🚦 **17.1.4 Administración del tráfico y QoS**
+
+### 📘 **Objetivo**
+
+Optimizar el rendimiento y priorizar los datos más importantes, especialmente los **servicios en tiempo real** (voz, video, conferencias).
+
+### 🔹 **QoS (Quality of Service)**
+
+Permite que el router o switch **clasifique el tráfico** y le dé prioridad según su tipo.
+
+|Nivel de prioridad|Tipo de tráfico|Ejemplo|
+|---|---|---|
+|**Alta**|Voz, videollamadas|VoIP, Webex|
+|**Media**|Navegación y correo|HTTP, SMTP|
+|**Baja**|Descargas o actualizaciones|FTP, actualizaciones Windows|
+
+📘 Los routers Cisco tienen **cuatro colas de prioridad**, y la **alta prioridad se vacía primero**.
+
+---
+
+## 💻 **17.2 Aplicaciones y protocolos en redes pequeñas**
+
+Después del diseño físico y lógico, una red necesita **aplicaciones y protocolos** que le den funcionalidad.
+
+---
+
+### 🔹 **Aplicaciones comunes**
+
+Las empresas pequeñas suelen usar aplicaciones locales y en la nube:
+
+|Tipo de aplicación|Ejemplo|
+|---|---|
+|**Correo electrónico**|Gmail, Outlook, servidores SMTP/IMAP.|
+|**Navegación web**|HTTP/HTTPS.|
+|**Archivos compartidos**|Servidores SMB, Google Drive.|
+|**Videoconferencia**|Webex, Zoom, Meet.|
+|**Gestión**|ERP, bases de datos.|
+
+---
+
+### 🔹 **Protocolos de red más usados**
+
+|Protocolo|Función|Descripción|
+|---|---|---|
+|**HTTP / HTTPS**|Web|Transferencia de páginas web.|
+|**SMTP / POP3 / IMAP**|Correo|Envío y recepción de correos electrónicos.|
+|**FTP / SFTP**|Archivos|Transferencia de archivos cliente-servidor.|
+|**DNS**|Nombres|Traduce nombres a IP.|
+|**DHCP**|Configuración|Asigna IPs automáticamente.|
+|**SSH / Telnet**|Administración|Acceso remoto (SSH seguro).|
+
+💡 **Importante:**  
+Muchas empresas exigen usar las **versiones seguras** de los protocolos:
+
+- **HTTPS** en lugar de HTTP
+    
+- **SFTP** en lugar de FTP
+    
+- **SSH** en lugar de Telnet
+    
+
+---
+
+## 🎙️ **17.2.1 Aplicaciones de voz y video**
+
+Cada vez más redes pequeñas integran servicios de **telefonía IP y videoconferencia**.
+
+Para que estos funcionen bien:
+
+- La infraestructura debe soportar **ancho de banda suficiente**.
+    
+- Se debe implementar **QoS** para priorizar tráfico en tiempo real.
+    
+
+|Requisito|Explicación|
+|---|---|
+|**Capacidad de red adecuada**|Switches Gigabit, routers modernos.|
+|**QoS configurado**|Priorizar paquetes de voz/video.|
+|**Latencia baja**|< 150 ms para llamadas claras.|
+
+---
+
+## 🔒 **17.3 Seguridad en redes pequeñas**
+
+La seguridad sigue siendo esencial, incluso en redes pequeñas.
+
+---
+
+### 🔹 **Buenas prácticas básicas**
+
+1. **Cambiar contraseñas por defecto.**
+    
+2. **Actualizar firmware y software de routers/switches.**
+    
+3. **Desactivar servicios innecesarios.**
+    
+4. **Habilitar SSH en lugar de Telnet.**
+    
+5. **Usar cifrado WPA3 en redes Wi-Fi.**
+    
+6. **Configurar un firewall o ACLs.**
+    
+7. **Hacer respaldos regulares.**
+    
+8. **Aplicar banners de advertencia:**
+    
+    ```bash
+    Router(config)# banner motd #Acceso no autorizado prohibido#
+    ```
+    
+
+---
+
+### 🔹 **Seguridad inalámbrica**
+
+|Tipo|Descripción|
+|---|---|
+|**WPA2/WPA3**|Cifrado fuerte en Wi-Fi.|
+|**SSID oculto**|No se muestra el nombre de la red.|
+|**MAC Filtering**|Solo ciertos dispositivos pueden conectarse.|
+
+---
+
+## 🧩 **17.4 Solución de problemas en redes pequeñas**
+
+Los problemas pueden deberse a **errores físicos, de configuración o lógicos**.
+
+### 🔹 **Metodología de diagnóstico**
+
+1. **Identificar el problema**
+    
+    - “No hay conexión”, “No imprime”, etc.
+        
+2. **Recolectar información**
+    
+    - IP del equipo, ping, cableado, configuración.
+        
+3. **Probar conectividad (ping y traceroute)**
+    
+    - `ping 192.168.1.1` → prueba conexión local.
+        
+    - `ping 8.8.8.8` → prueba Internet.
+        
+    - `traceroute 8.8.8.8` → rastrea la ruta de red.
+        
+4. **Verificar configuración**
+    
+    - `show ip interface brief`
+        
+    - `show running-config`
+        
+5. **Reiniciar o reemplazar hardware si es necesario.**
+    
+
+---
+
+### 🔹 **Herramientas de diagnóstico**
+
+|Herramienta|Función|
+|---|---|
+|**ping**|Comprueba conectividad.|
+|**traceroute**|Muestra el camino de los paquetes.|
+|**ipconfig / ifconfig**|Muestra la configuración IP.|
+|**show commands (Cisco)**|Verificación en routers/switches.|
+|**Packet Tracer**|Simula redes para práctica y pruebas.|
+
+---
+
+## 📘 **17.5 Resumen general del Módulo 17**
+
+|Tema|Descripción|
+|---|---|
+|**Diseño de red pequeña**|Plan simple, dispositivos adecuados, IP bien asignadas.|
+|**Dispositivos principales**|Router, switch, AP, PCs, servidores.|
+|**Direcciones IP**|Planificación clara y documentada.|
+|**Redundancia**|Equipos o enlaces duplicados para evitar fallas.|
+|**QoS**|Priorización del tráfico de voz y video.|
+|**Protocolos esenciales**|HTTP, DNS, DHCP, SSH, FTP, SMTP, IMAP.|
+|**Seguridad básica**|Contraseñas, SSH, WPA3, firewall, actualizaciones.|
+|**Solución de problemas**|Ping, traceroute, comandos de verificación.|
+|**Administrador de red**|Planifica, protege y optimiza la red.|
+
+---
+
+### 💡 **Resumen visual: ejemplo de red pequeña**
+
+```
+                 Internet (ISP)
+                      |
+                [Router con DHCP]
+                      |
+          ---------------------------
+          |           |            |
+        [Switch]   [AP Wi-Fi]   [Servidor]
+          |
+    --------------------------
+    |    |    |     |        |
+   PC1  PC2  Impresora  Teléfono IP
+```
+
+- El **router** asigna IPs mediante **DHCP** y actúa como **gateway**.
+    
+- El **switch** conecta los dispositivos por cable.
+    
+- El **AP Wi-Fi** permite acceso inalámbrico seguro.
+    
+- **QoS** da prioridad a la voz sobre el tráfico normal.
+    
+- **Firewall** protege el perímetro.
+    
+
+---
+
+## 🧠 **Resumen final (clave para examen)**
+
+|Concepto|Punto clave|
+|---|---|
+|**Diseño de red pequeña**|Sencillo, funcional, seguro.|
+|**Plan IP**|Bien documentado.|
+|**Redundancia**|Evita puntos únicos de falla.|
+|**QoS**|Prioriza tráfico de voz/video.|
+|**Protocolos esenciales**|HTTP, DNS, DHCP, SSH, SMTP.|
+|**Seguridad**|Contraseñas seguras, SSH, WPA3, firewall.|
+|**Solución de problemas**|Ping, traceroute, show commands.|
+
+---
+
+✅ **En resumen:**  
+La **Unidad 17** integra todo lo aprendido — te enseña a **diseñar, configurar, proteger y mantener** una red pequeña, aplicando los principios de **direccionamiento IP, protocolos, QoS y seguridad**.
+
+---
+
+¿Quieres que te prepare un **mapa conceptual general del Módulo 8 al 17** (como repaso visual para el examen)?  
+Puedo hacerlo con diagramas o en formato esquemático resumen.
+
+
+- - -
+- - - -
+- - - 
+
+# Practica 
+
+### 🔍 **1. Ver todas las interfaces y su estado**
+
+```bash
+show ip interface brief
+```
+
+Muestra un resumen con:
+
+- Nombre de la interfaz (`GigabitEthernet0/0/0`, `Serial0/0/0`, etc.)
+    
+- Dirección IP asignada
+    
+- Estado de línea y protocolo (up/down)
+    
+
+**Ejemplo:**
+
+```
+Router# show ip interface brief
+Interface              IP-Address      OK? Method Status                Protocol
+GigabitEthernet0/0     192.168.10.1    YES manual up                    up
+GigabitEthernet0/1     209.165.200.225 YES manual up                    up
+Serial0/0/0            unassigned      YES unset  administratively down down
+```
+
+---
+
+### 🌐 **2. Ver configuración completa (incluye gateway y IPs)**
+
+```bash
+show running-config
+```
+
+Muestra toda la configuración actual del router, incluyendo:
+
+- Nombre del router
+    
+- Contraseñas
+    
+- Configuración de interfaces con IP y descripción
+    
+- Gateway por defecto (si está configurado con `ip route 0.0.0.0 0.0.0.0`)
+    
+
+**Ejemplo de salida:**
+
+```
+Router# show running-config
+hostname R1
+!
+interface GigabitEthernet0/0
+ description Link to LAN
+ ip address 192.168.10.1 255.255.255.0
+ no shutdown
+!
+ip route 0.0.0.0 0.0.0.0 209.165.200.226
+```
+
+👉 Esa última línea (`ip route 0.0.0.0 0.0.0.0 ...`) indica el **gateway predeterminado**.
+
+---
+
+### 🔗 **3. Ver tabla de rutas**
+
+```bash
+show ip route
+```
+
+Muestra las rutas conocidas por el router y la puerta de enlace predeterminada (si la hay).
+
+**Ejemplo:**
+
+```
+Router# show ip route
+Gateway of last resort is 209.165.200.226 to network 0.0.0.0
+```
+
+Esto indica cuál es el **default gateway**.
+
+---
+
+### 🧠 **4. Ver tabla ARP (si quieres saber con qué está conectado)**
+
+```bash
+show ip arp
+```
+
+Lista los dispositivos conectados directamente al router y sus direcciones MAC e IP.
+
+---
+
+### 💬 **5. Ver descripción de las interfaces (si las documentaste)**
+
+```bash
+show interfaces description
+```
+
+Muestra una vista rápida de las conexiones y etiquetas como:
+
+```
+R1# show interfaces description
+Interface              Status         Protocol  Description
+Gi0/0                  up             up        Link to LAN
+Gi0/1                  up             up        Link to R2
+```
+
+---
+
+### ✅ **Resumen rápido de comandos útiles**
+
+|Objetivo|Comando|
+|---|---|
+|Ver IPs y estado|`show ip interface brief`|
+|Ver configuración completa|`show running-config`|
+|Ver gateway por defecto|`show ip route`|
+|Ver dispositivos conectados|`show ip arp`|
+|Ver descripciones de interfaces|`show interfaces description`|
+
+---
+
+## ⚙️ **Configuración completa de R1**
+
+### 1️⃣ Configurar el nombre del router
+
+```bash
+Router> enable
+Router# configure terminal
+Router(config)# hostname R1
+```
+
+---
+
+### 2️⃣ Desactivar la búsqueda de DNS
+
+(Evita que el router intente resolver nombres si escribes mal un comando)
+
+```bash
+R1(config)# no ip domain-lookup
+```
+
+---
+
+### 3️⃣ Asignar contraseñas
+
+```bash
+R1(config)# enable secret Cisconepa55        ← modo EXEC privilegiado
+R1(config)# line console 0
+R1(config-line)# password Cisconepa55
+R1(config-line)# login
+R1(config-line)# exit
+```
+
+---
+
+### 4️⃣ Establecer requisito de longitud mínima de contraseñas
+
+```bash
+R1(config)# security passwords min-length 10
+```
+
+---
+
+### 5️⃣ Cifrar todas las contraseñas
+
+```bash
+R1(config)# service password-encryption
+```
+
+---
+
+### 6️⃣ Crear un banner de advertencia
+
+(Must include “Warning” como dice la consigna)
+
+```bash
+R1(config)# banner motd #Warning: Accesso no autorizado está prohibido#
+```
+
+---
+
+### 7️⃣ Configurar interfaces Gigabit Ethernet (según tu direccionamiento)
+
+_(Ejemplo usando la subred 192.168.0.0/25 para Personal)_
+
+```bash
+R1(config)# interface g0/0
+R1(config-if)# description Conexión a S1 - Personal
+R1(config-if)# ip address 192.168.0.1 255.255.255.128
+R1(config-if)# no shutdown
+R1(config-if)# exit
+```
+
+(Si tienes más interfaces, repite para G0/1, G0/2, etc. con sus subredes correspondientes)
+
+---
+
+### 8️⃣ Configurar SSH (según indica tu guía)
+
+1. **Asignar dominio**
+    
+    ```bash
+    R1(config)# ip domain-name CCNA-lab.com
+    ```
+    
+2. **Generar claves RSA**
+    
+    ```bash
+    R1(config)# crypto key generate rsa
+    How many bits in the modulus [512]: 1024
+    ```
+    
+3. **Crear usuario local**
+    
+    ```bash
+    R1(config)# username Admin1 privilege 15 secret Admin1pa55
+    ```
+    
+4. **Habilitar SSH en las líneas VTY**
+    
+    ```bash
+    R1(config)# line vty 0 4
+    R1(config-line)# transport input ssh
+    R1(config-line)# login local
+    R1(config-line)# exec-timeout 5 0       ← cierra sesión tras 5 min de inactividad
+    R1(config-line)# exit
+    ```
+    
+
+---
+
+### 9️⃣ Configurar bloqueo por intentos fallidos
+
+```bash
+R1(config)# login block-for 180 attempts 4 within 120
+```
+
+👉 Esto bloquea el acceso durante **3 minutos (180 segundos)** si alguien falla 4 intentos en 2 minutos.
+
+---
+
+### 🔟 Configurar timeout en la consola
+
+(para cerrar sesión tras 5 minutos de inactividad)
+
+```bash
+R1(config)# line console 0
+R1(config-line)# exec-timeout 5 0
+R1(config-line)# exit
+```
+
+---
+
+### ✅ 11️⃣ Guardar configuración
+
+```bash
+R1# copy running-config startup-config
+Destination filename [startup-config]? <Enter>
+```
+
+---
+
+## 🧾 **Resumen de configuración**
+
+|Objetivo|Comando principal|
+|---|---|
+|Nombre del router|`hostname R1`|
+|Desactivar DNS|`no ip domain-lookup`|
+|Contraseña enable|`enable secret Cisconepa55`|
+|Contraseña consola|`line console 0 → password Cisconepa55`|
+|Mínimo de caracteres|`security passwords min-length 10`|
+|Cifrar contraseñas|`service password-encryption`|
+|Banner de advertencia|`banner motd #Warning...#`|
+|Clave SSH|`crypto key generate rsa 1024`|
+|Usuario admin|`username Admin1 privilege 15 secret Admin1pa55`|
+|Acceso SSH|`line vty 0 4 → transport input ssh`|
+|Bloqueo por intentos fallidos|`login block-for 180 attempts 4 within 120`|
+|Timeout de sesión|`exec-timeout 5 0`|
+
+`ipv6 unicast-routing` Comando para permitir que el router reenvíe paquetes ipv6
+
+`ipv6 addres {ip v6} link-local` Comando para configurar la dirección ipv6 link-local
+
+`no ipv6 address 2001:db8:1:5::1/64` Comando para eliminar la ip configurada 

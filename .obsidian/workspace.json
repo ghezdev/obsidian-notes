@@ -49,7 +49,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "longitud",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -74,7 +74,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 284.51103591918945
+    "width": 300
   },
   "right": {
     "id": "c14afa40bcfef6c0",
@@ -90,7 +90,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Notion/Ingeniería de datos/Ingeniería de datos.md",
+                "file": "Welcome.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -100,7 +100,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Ingeniería de datos"
+              "title": "Backlinks for Welcome"
             }
           },
           {
@@ -109,12 +109,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Notion/Ingeniería de datos/Ingeniería de datos.md",
+                "file": "Welcome.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from Ingeniería de datos"
+              "title": "Outgoing links from Welcome"
             }
           },
           {
@@ -138,13 +138,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Notion/Ingeniería de datos/Ingeniería de datos.md",
+                "file": "Welcome.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Ingeniería de datos"
+              "title": "Outline of Welcome"
             }
           },
           {
@@ -153,8 +153,8 @@
             "state": {
               "type": "calendar",
               "state": {},
-              "icon": "calendar-with-checkmark",
-              "title": "Calendar"
+              "icon": "lucide-file",
+              "title": "Plugin no longer active"
             }
           },
           {
@@ -178,32 +178,21 @@
             }
           },
           {
-            "id": "ce1839d60c638933",
+            "id": "1b066526074a01ab",
             "type": "leaf",
             "state": {
-              "type": "smart-chat-view",
+              "type": "review-queue-list-view",
               "state": {},
-              "icon": "lucide-ghost",
-              "title": "smart-chat-view"
-            }
-          },
-          {
-            "id": "a577ae5fce3bbd14",
-            "type": "leaf",
-            "state": {
-              "type": "smart-connections-view",
-              "state": {},
-              "icon": "lucide-ghost",
-              "title": "smart-connections-view"
+              "icon": "SpacedRepIcon",
+              "title": "Notes Review Queue"
             }
           }
         ],
-        "currentTab": 5
+        "currentTab": 6
       }
     ],
     "direction": "horizontal",
-    "width": 435.5,
-    "collapsed": true
+    "width": 438.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -223,53 +212,53 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "807f223daa11a0c8",
+  "active": "a3db7bfcff25a703",
   "lastOpenFiles": [
+    "redes de datos 1 v2/Comandos.md",
     "redes de datos 1 v2/Segundo parcial.md",
-    "Calculo 2/Parcial 2.md",
-    "Pasted image 20251023234455.png",
-    "Calculo 2/Notas Parcial 1.md",
+    "Proceso de desarrollo de software/Clase 3.md",
+    "Proceso de desarrollo de software/Clase 2.md",
+    "Proceso de desarrollo de software",
+    "redes de datos 1 v2/Primer parcial.md",
+    "redes de datos 1 v2/Mapa conceptual 1er parcial.md",
+    "redes de datos 1 v2",
+    "nordelgroup.md",
     "Untitled.base",
-    "Calculo 2/ej 2 tp 3.md",
+    "Sist de info 2 v2/Práctica.md",
+    "Sist de info 2 v2/Parcial 1.md",
+    "Sist de info 2 v2/Diagramas parcial 1.md",
+    "Sist de info 2 v2",
+    "Pasted image 20251023234455.png",
     "Pasted image 20251016205517.png",
     "Pasted image 20251016205511.png",
     "Pasted image 20251016205501.png",
     "Pasted image 20251016205451.png",
-    "redes de datos 1 v2/Primer parcial.md",
-    "Sist de info 2 v2/Diagramas parcial 1.md",
-    "Sist de info 2 v2/Práctica.md",
-    "Sist de info 2 v2/Parcial 1.md",
-    "Calculo 2/Parcial 1.md",
-    "Pasted Image 20250917021252_077.png",
-    "Pasted Image 20250917003213_151.png",
-    "Pasted Image 20250917001856_055.png",
-    "Pasted Image 20250916231625_866.png",
-    "Pasted Image 20250916225944_649.png",
-    "Calculo 2/Drawing 2025-08-23 16.29.01.excalidraw.md",
-    "redes de datos 1 v2/Mapa conceptual 1er parcial.md",
-    "ENTREVISTA MODO.md",
-    "Sist de info 2 v2",
-    "redes de datos 1 v2",
-    "nordelgroup.md",
-    "Excalidraw/Drawing 2025-05-08 20.00.37.excalidraw.md",
-    "Excalidraw/Drawing 2025-05-08 20.49.28.excalidraw.md",
-    "Excalidraw/Drawing 2025-05-08 20.52.29.excalidraw.md",
-    "Técnica Feynman.md",
+    "Pasted image 20250916204732.png",
+    "Pasted image 20250916204719.png",
+    "Pasted image 20250914003004.png",
+    "Pasted image 20250914002311.png",
+    "Pasted image 20250914002257.png",
+    "Notion/Sistemas de Información I/Resumen Final.md",
+    "Notion/Sistemas de Información I/Final ejemplo.md",
     "Game devs.md",
-    "Calculo 2",
-    "Fundamentos de telecomunicaciones/PREVIO.md",
-    "Fundamentos de telecomunicaciones/Teoría de la información/Tabla de unidades.md",
-    "Fundamentos de telecomunicaciones/Exámenes/Finales/papa.md",
-    "Fundamentos de telecomunicaciones/Exámenes/Finales/lala.md",
-    "Fundamentos de telecomunicaciones/Modulación/v2/Modulación.md",
-    "Fundamentos de telecomunicaciones/Exámenes/Finales/Untitled 1.md",
-    "Fundamentos de telecomunicaciones/Exámenes/Finales/Abril 2024.md",
-    "Fundamentos de telecomunicaciones/Medios no guiados",
-    "Fundamentos de telecomunicaciones/Medios guiados",
-    "Fundamentos de telecomunicaciones/Métodos de acceso",
-    "Fundamentos de telecomunicaciones/Multiplexores",
-    "Fundamentos de telecomunicaciones/Exámenes",
+    "Fundamentos de telecomunicaciones/Teoría de la información/v2/Tipos de comunicación según el modo de transmisión.md",
+    "Fundamentos de telecomunicaciones/Teoría de la información/v2/7. Tipos de comunicación según el medio.md",
+    "Fundamentos de telecomunicaciones/Teoría de la información/v2/6. Teorema Shannon-Hartley.md",
+    "Fundamentos de telecomunicaciones/Teoría de la información/v2/5. Canal de comunicación.md",
+    "Fundamentos de telecomunicaciones/Teoría de la información/v2/4. Velocidad de transmisión.md",
+    "Fundamentos de telecomunicaciones/Teoría de la información/v2/3. Tasa de información.md",
+    "Fundamentos de telecomunicaciones/Teoría de la información/v2/2. Entropía.md",
+    "Fundamentos de telecomunicaciones/Teoría de la información/v2/1. Fundamentos.md",
+    "Fundamentos de telecomunicaciones/Señales de transmisión/v2/5. Problemas de las señales.md",
+    "Fundamentos de telecomunicaciones/Señales de transmisión/v2/4. Ancho de banda de Nyquist.md",
+    "Fundamentos de telecomunicaciones/Señales de transmisión/v2/3. Señal cuadrada.md",
+    "Fundamentos de telecomunicaciones/Señales de transmisión/v2/2. Señal senoidal.md",
+    "Fundamentos de telecomunicaciones/Señales de transmisión/v2/1. Señales.md",
+    "Fundamentos de telecomunicaciones/Teoría de la información/v2",
+    "Fundamentos de telecomunicaciones/Señales de transmisión/v2",
+    "Fundamentos de telecomunicaciones/Modulación/v2",
+    "Fundamentos de telecomunicaciones/Exámenes/Segundos Parciales",
     "Fundamentos de telecomunicaciones/Exámenes/Primeros parciales",
-    "Untitled.canvas"
+    "Fundamentos de telecomunicaciones/Exámenes/Finales"
   ]
 }
