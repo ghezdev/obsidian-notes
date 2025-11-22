@@ -11,10 +11,14 @@
             "id": "e7a7b303c61786dc",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "Calculo 2/Notas Parcial 2.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "Notas Parcial 2"
             }
           }
         ]
@@ -214,8 +218,9 @@
   },
   "active": "a3db7bfcff25a703",
   "lastOpenFiles": [
-    "redes de datos 1 v2/Comandos.md",
+    "Calculo 2/Notas Parcial 2.md",
     "redes de datos 1 v2/Segundo parcial.md",
+    "redes de datos 1 v2/Comandos.md",
     "Proceso de desarrollo de software/Clase 3.md",
     "Proceso de desarrollo de software/Clase 2.md",
     "Proceso de desarrollo de software",
@@ -253,7 +258,6 @@
     "Fundamentos de telecomunicaciones/Señales de transmisión/v2/4. Ancho de banda de Nyquist.md",
     "Fundamentos de telecomunicaciones/Señales de transmisión/v2/3. Señal cuadrada.md",
     "Fundamentos de telecomunicaciones/Señales de transmisión/v2/2. Señal senoidal.md",
-    "Fundamentos de telecomunicaciones/Señales de transmisión/v2/1. Señales.md",
     "Fundamentos de telecomunicaciones/Teoría de la información/v2",
     "Fundamentos de telecomunicaciones/Señales de transmisión/v2",
     "Fundamentos de telecomunicaciones/Modulación/v2",
