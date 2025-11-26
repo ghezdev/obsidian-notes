@@ -939,3 +939,613 @@ Eso es TODO el procedimiento.
 > ]
 
 Si querés, en el próximo mensaje me das un ejemplo concreto (tipo: (r(t) = (t^2, 2t)), (\delta(x,y)=x+y)) y te lo planteo sin resolver.
+
+
+
+
+Claro Guillermo, te explico **exacto y claramente** cómo funciona el **Teorema de Green**, cuándo se usa, y por qué lo usé en tu ejercicio de flujo.  
+Te prometo que cuando terminemos, vas a saber **exactamente cuándo aplicarlo en un parcial** sin dudar.
+
+---
+
+# 🟢 1) ¿Qué dice el Teorema de Green?
+
+Conecta **una integral de línea** en una curva cerrada, con **una integral doble** sobre la región encerrada.
+
+### Tiene **dos versiones**:
+
+---
+
+## ✅ **Versión de CIRCULACIÓN**
+
+Si ( \vec F = (P, Q) ) y (C) es una curva cerrada antihoraria:
+
+$$
+\oint_C (P,dx + Q,dy)= \iint_D \left(\frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y}\right), dA  
+$$
+
+---
+
+## 🟥 **Versión de FLUJO** ← esta es la que usamos
+
+$$
+\oint_C \vec F\cdot \vec n, dS= \iint_D (\nabla\cdot \vec F), dA= 
+
+\iint_D (P_x + Q_y), dA  
+$$
+
+**Atención: flujo → divergencia.**
+
+---
+
+# 🟦 2) ¿Cuándo puedo usar Green?
+
+Siempre que se cumpla:
+
+1. **La curva es cerrada**  
+    ✔ triángulo  
+    ✔ cuadrado  
+    ✔ circunferencia  
+    ✔ poligonal cerrada  
+    ❌ NO sirve en curvas abiertas
+    
+2. **La curva está en el plano**  
+    (solo para 2D)
+    
+3. **La orientación es antihoraria**  
+    (si es horaria, sale negativo)
+    
+4. El campo (F=(P,Q)) es “suave” (continuo, derivable).
+    
+
+---
+
+# 🟩 3) ¿Por qué se usa Green? (VENTAJA)
+
+Porque Green transforma una **integral horrible de línea** en una **integral doble facilísima**.
+
+En tu ejercicio:
+
+### Te pedían un **flujo** a través de una circunferencia:
+
+[  
+\oint_C \vec F\cdot \vec n, dS  
+]
+
+Parametrizar eso es feo porque implica:
+
+- derivar (r(t))
+    
+- obtener el normal unitario
+    
+- multiplicar por (F(r(t)))
+    
+- integrar desde (0) a (2\pi)
+    
+
+_**MUCHO TRABAJO.**_
+
+---
+
+### Pero con Green:
+
+# [  
+\oint_C \vec F\cdot \vec n, dS
+
+\iint_D (P_x + Q_y), dA  
+]
+
+y la región D era un **disco de radio 1**, donde la integral doble era trivial:
+
+[  
+\iint_D 1+2y, dA  
+]
+
+El término (2y) se va por simetría, y queda solo el área del disco → (\pi).
+
+Fue **infinitamente más fácil**.
+
+---
+
+# 🔵 4) Entonces… ¿por qué lo apliqué en tu ejercicio?
+
+### ✔ La curva era **cerrada**
+
+→ circunferencia de radio 1
+
+### ✔ Estaba en el **plano**
+
+→ lo que pide Green
+
+### ✔ Te pedían un **flujo**
+
+→ usa la versión de divergencia (P_x+Q_y)
+
+### ✔ Era más rápido ver simetría del disco
+
+→ integral doble inmediata
+
+### ✔ Parametrizar era más engorroso
+
+→ Green lo hace trivial
+
+Por eso **SIEMPRE** que tengas:
+
+- **flujo** o **circulación**
+    
+- **curva cerrada**
+    
+- **en 2D**
+    
+
+la pregunta automática es:
+
+> **¿Puedo usar Green?**
+
+Y la respuesta suele ser: **Sí, y me ahorro un montón de trabajo.**
+
+---
+
+# 🎯 5) Resumen estilo “machete para el parcial”
+
+### ✔ **Usar Green cuando:**
+
+- curva cerrada
+    
+- campo vectorial 2D
+    
+- pedís flujo → usar divergencia
+    
+- pedís circulación → usar rotor 2D
+    
+- región encerrada es fácil (círculo, rectángulo, triángulo)
+    
+
+### ❌ **NO usar Green cuando:**
+
+- curva NO es cerrada
+    
+- campo en 3D
+    
+- integral de línea escalar
+    
+- la región encerrada no es simple de describir
+    
+
+---
+
+# Si querés, te muestro 3 ejercicios rápidos:
+
+- uno donde conviene usar Green
+    
+- uno donde NO conviene
+    
+- uno donde es opcional
+    
+
+Así te queda clarísimo cuándo aplicarlo.
+
+
+
+| Qué estás calculando | Dimensión | Integral        | Por qué aparece el “1”      |
+| -------------------- | --------- | --------------- | --------------------------- |
+| Área                 | 2D        | $\iint_D 1,dA$  | Sumas pedacitos de área     |
+| Volumen              | 3D        | $\iiint_E 1,dV$ | Sumas pedacitos de volumen  |
+| Longitud             | 1D        | $\int_C 1,ds$   | Sumas pedacitos de longitud |
+
+
+  
+
+## 1. Datos del ejercicio
+
+  
+
+$$
+
+\vec F(x,y) = (P(x,y),Q(x,y))=
+
+\big(6xe^y+\sin x,; 3x^2e^y+2y+(y-x)^2\big)
+
+$$
+
+  
+
+C es **la semicircunferencia de radio 3** centrada en el origen, sobre el lado izquierdo
+
+$(x^2+y^2=9,\ x\le 0)$, recorrida como en el dibujo: de ((0,3)) hacia ((0,-3)) por el arco.
+
+  
+
+Queremos $\displaystyle \int_C \vec F\cdot d\vec r$.
+
+  
+
+---
+
+  
+
+## 2. Truco para usar Green
+
+  
+
+El Teorema de Green vale para **curvas cerradas**.
+
+La semicircunferencia no es cerrada, así que hacemos:
+
+  
+
+* Cerramos la curva agregando el segmento del eje (y) entre ((0,-3)) y ((0,3)).
+
+  
+
+Llamo:
+
+  
+
+* $C_{\text{arco}}$: la semicircunferencia (lo que pide el ejercicio).
+
+* $C_{\text{seg}}$: el segmento vertical (x=0) de ((0,-3)) a ((0,3)).
+
+* $C_{\text{cerrada}} = C_{\text{arco}} \cup C_{\text{seg}}$.
+
+  
+
+La orientación de $C_{\text{cerrada}}$ es positiva (antihoraria) tal como está dibujado:
+
+bajás por el arco y subís por el eje (y).
+
+  
+
+Entonces:
+
+  
+
+$$
+
+\oint_{C_{\text{cerrada}}} \vec F\cdot d\vec r = \int_{C_{\text{arco}}} \vec F\cdot d\vec r + \int_{C_{\text{seg}}} \vec F\cdot d\vec r
+
+$$
+
+  
+
+Y Green nos da:
+
+  
+
+$$
+
+\oint_{C_{\text{cerrada}}} \vec F\cdot d\vec r
+
+=
+
+  
+
+\iint_D\left(\frac{\partial Q}{\partial x}-\frac{\partial P}{\partial y}\right)dA
+
+$$
+
+  
+
+donde (D) es el semidisco $x^2+y^2\le 9,\ x\le 0$.
+
+  
+
+Al final vamos a despejar la integral del arco:
+
+  
+
+$$
+
+\int_{C_{\text{arco}}} \vec F\cdot d\vec r
+
+=
+
+  
+
+\iint_D(\cdots)dA - \int_{C_{\text{seg}}} \vec F\cdot d\vec r
+
+$$
+
+  
+
+---
+
+  
+
+## 3. Calculamos el “rotor escalar”
+
+  
+
+$$
+
+P=6xe^y+\sin x,\qquad Q=3x^2e^y+2y+(y-x)^2
+
+$$
+
+  
+
+$$
+
+\frac{\partial Q}{\partial x}=6xe^y+2x-2y,\qquad
+
+\frac{\partial P}{\partial y}=6xe^y
+
+$$
+
+  
+
+$$
+
+\frac{\partial Q}{\partial x}-\frac{\partial P}{\partial y}
+
+= (6xe^y+2x-2y)-6xe^y
+
+= 2x-2y
+
+$$
+
+  
+
+Así que:
+
+  
+
+$$
+
+\iint_D\left(\frac{\partial Q}{\partial x}-\frac{\partial P}{\partial y}\right)dA
+
+=
+
+  
+
+\iint_D (2x-2y),dA
+
+$$
+
+  
+
+---
+
+  
+
+## 4. Integral sobre el semidisco en polares
+
+  
+
+Región (D): semidisco de radio 3, lado izquierdo.
+
+  
+
+En polares en el plano (xy):
+
+  
+
+$$
+
+x = r\cos\theta,\quad y = r\sin\theta,\quad dA = r,dr,d\theta
+
+$$
+
+  
+
+Para el semidisco izquierdo:
+
+  
+
+* radio: $0 \le r \le 3$
+
+* ángulo: $\dfrac{\pi}{2} \le \theta \le \dfrac{3\pi}{2})  (donde (\cos\theta \le 0)$
+
+  
+
+El integrando:
+
+  
+
+$$
+
+2x-2y = 2r\cos\theta - 2r\sin\theta
+
+$$
+
+  
+
+Entonces:
+
+  
+
+$$
+
+\iint_D (2x-2y),dA
+
+=
+
+  
+
+\int_{\theta=\pi/2}^{3\pi/2}
+
+\int_{r=0}^{3}
+
+(2r\cos\theta - 2r\sin\theta), r,dr,d\theta
+
+$$
+
+  
+
+$$
+
+  
+
+\int_{\pi/2}^{3\pi/2}
+
+\int_0^3 2r^2(\cos\theta - \sin\theta),dr,d\theta
+
+$$
+
+  
+
+Integrando en (r):
+
+  
+
+$$
+
+\int_0^3 2r^2,dr = 2\cdot\frac{3^3}{3} = 18
+
+$$
+
+  
+
+$$
+
+\Rightarrow \iint_D (2x-2y),dA
+
+=
+
+  
+
+\int_{\pi/2}^{3\pi/2} 18(\cos\theta - \sin\theta),d\theta
+
+$$
+
+  
+
+$$
+
+= 18\left[\sin\theta + \cos\theta\right]_{\pi/2}^{3\pi/2}
+
+= 18\big[(-1+0) - (1+0)\big] = 18(-2) = -36
+
+$$
+
+  
+
+Así que:
+
+  
+
+$$
+
+\oint_{C_{\text{cerrada}}} \vec F\cdot d\vec r = -36
+
+$$
+
+  
+
+---
+
+  
+
+## 5. Integral sobre el segmento del eje (y)
+
+  
+
+Parámetro para (C_{\text{seg}}):
+
+$$
+
+\vec r(t) = (0,t),\quad -3\le t\le 3
+
+$$
+
+$$
+
+\vec r'(t) = (0,1)
+
+$$
+
+  
+
+En ese segmento, (x=0), (y=t):
+
+  
+
+$$
+
+P(0,t) = 0,\quad
+
+Q(0,t) = 3\cdot 0^2 e^{t} + 2t + (t-0)^2 = 2t + t^2
+
+$$
+
+  
+
+$$
+
+\vec F\cdot d\vec r = P,dx + Q,dy = Q,dt = (2t+t^2),dt
+
+$$
+
+  
+
+Entonces:
+
+  
+
+$$
+
+\int_{C_{\text{seg}}} \vec F\cdot d\vec r
+
+= \int_{-3}^{3} (2t+t^2),dt
+
+= \left[t^2 + \frac{t^3}{3}\right]_{-3}^{3}
+
+= (9+9) - (9-9) = 18
+
+$$
+
+  
+
+---
+
+  
+
+## 6. Despejamos la integral sobre el arco
+
+  
+
+$$
+
+\oint_{C_{\text{cerrada}}} \vec F\cdot d\vec r
+
+  
+
+\int_{C_{\text{arco}}} \vec F\cdot d\vec r
+
++
+
+\int_{C_{\text{seg}}} \vec F\cdot d\vec r
+
+$$
+
+  
+
+$$
+
+-36 = \int_{C_{\text{arco}}} \vec F\cdot d\vec r + 18
+
+$$
+
+  
+
+$$
+
+\boxed{\displaystyle \int_{C_{\text{arco}}} \vec F\cdot d\vec r = -36 - 18 = -54}
+
+$$
+
+  
+
+---
+
+  
+
+**Respuesta:**
+
+$$
+
+\int_C \vec F\cdot d\vec r = -54
+
+$$
+
+donde (C) es la semicircunferencia mostrada en el gráfico.

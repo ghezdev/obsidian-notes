@@ -8,17 +8,15 @@
         "type": "tabs",
         "children": [
           {
-            "id": "e7a7b303c61786dc",
+            "id": "b4bb1869032d0a0a",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "excalidraw",
               "state": {
-                "file": "Calculo 2/Notas Parcial 2.md",
-                "mode": "source",
-                "source": false
+                "file": "Calculo 2/Practica/Drawing 2025-11-26 08.40.55.excalidraw.md"
               },
-              "icon": "lucide-file",
-              "title": "Notas Parcial 2"
+              "icon": "excalidraw-icon",
+              "title": "Drawing 2025-11-26 08.40.55.excalidraw"
             }
           }
         ]
@@ -53,7 +51,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "longitud",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -78,7 +76,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 284.51103591918945,
+    "collapsed": true
   },
   "right": {
     "id": "c14afa40bcfef6c0",
@@ -94,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Welcome.md",
+                "file": "Notion/Ingeniería de datos/Ingeniería de datos.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +103,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Welcome"
+              "title": "Backlinks for Ingeniería de datos"
             }
           },
           {
@@ -113,12 +112,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Welcome.md",
+                "file": "Notion/Ingeniería de datos/Ingeniería de datos.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from Welcome"
+              "title": "Outgoing links from Ingeniería de datos"
             }
           },
           {
@@ -142,13 +141,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Welcome.md",
+                "file": "Notion/Ingeniería de datos/Ingeniería de datos.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Welcome"
+              "title": "Outline of Ingeniería de datos"
             }
           },
           {
@@ -157,8 +156,8 @@
             "state": {
               "type": "calendar",
               "state": {},
-              "icon": "lucide-file",
-              "title": "Plugin no longer active"
+              "icon": "calendar-with-checkmark",
+              "title": "Calendar"
             }
           },
           {
@@ -182,13 +181,23 @@
             }
           },
           {
-            "id": "1b066526074a01ab",
+            "id": "ce1839d60c638933",
             "type": "leaf",
             "state": {
-              "type": "review-queue-list-view",
+              "type": "smart-chat-view",
               "state": {},
-              "icon": "SpacedRepIcon",
-              "title": "Notes Review Queue"
+              "icon": "lucide-ghost",
+              "title": "smart-chat-view"
+            }
+          },
+          {
+            "id": "a577ae5fce3bbd14",
+            "type": "leaf",
+            "state": {
+              "type": "smart-connections-view",
+              "state": {},
+              "icon": "lucide-ghost",
+              "title": "smart-connections-view"
             }
           }
         ],
@@ -196,7 +205,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 438.5
+    "width": 435.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -216,53 +225,106 @@
       "obsidian-git:Open Git source control": false
     }
   },
+  "floating": {
+    "id": "0b905f441507b94d",
+    "type": "floating",
+    "children": [
+      {
+        "id": "0bf6dc4337e9c96d",
+        "type": "window",
+        "children": [
+          {
+            "id": "2e572a3213173df7",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "74ad567a42cc4f03",
+                "type": "leaf",
+                "state": {
+                  "type": "markdown",
+                  "state": {
+                    "file": "Calculo 2/Notas Parcial 2.md",
+                    "mode": "source",
+                    "source": false
+                  },
+                  "icon": "lucide-file",
+                  "title": "Notas Parcial 2"
+                }
+              },
+              {
+                "id": "f3a16f0322a5c59a",
+                "type": "leaf",
+                "state": {
+                  "type": "excalidraw",
+                  "state": {
+                    "file": "Calculo 2/Practica/NOTAS.md"
+                  },
+                  "icon": "excalidraw-icon",
+                  "title": "NOTAS"
+                }
+              }
+            ],
+            "currentTab": 1
+          }
+        ],
+        "direction": "vertical",
+        "x": 1920,
+        "y": 0,
+        "width": 960,
+        "height": 1050,
+        "maximize": false,
+        "zoom": 0.5
+      }
+    ]
+  },
   "active": "a3db7bfcff25a703",
   "lastOpenFiles": [
+    "Calculo 2/Practica/NOTAS.md",
+    "Calculo 2/Practica/Drawing 2025-11-26 08.40.55.excalidraw.md",
+    "Calculo 2/Parcial 2.md",
+    "Calculo 2/Parcial 1.md",
     "Calculo 2/Notas Parcial 2.md",
+    "Calculo 2/Notas Parcial 1.md",
+    "Calculo 2/ej 2 tp 3.md",
+    "Calculo 2/Drawing 2025-08-23 16.29.01.excalidraw.md",
+    "Pasted Image 20251126091921_063.png",
+    "Pasted Image 20251126090800_425.png",
+    "Pasted Image 20251126084232_103.png",
+    "Calculo 2/Practica/Ejercicio 5.md",
+    "Calculo 2/Practica/Ejercicio 4.md",
+    "Calculo 2/Practica/Ejercicio 3.md",
+    "Calculo 2/Practica/Ejercicio 2.md",
+    "Pasted Image 20251126005809_365.png",
+    "Pasted Image 20251126005734_903.png",
+    "Pasted Image 20251126005148_163.png",
+    "Pasted Image 20251126005127_696.png",
+    "Calculo 2/Practica/Ejercicio 1.md",
+    "Pasted Image 20251125215533_569.png",
+    "Pasted Image 20251124220451_417.png",
+    "Pasted Image 20251124212831_465.png",
+    "Calculo 2/Practica",
     "redes de datos 1 v2/Segundo parcial.md",
-    "redes de datos 1 v2/Comandos.md",
-    "Proceso de desarrollo de software/Clase 3.md",
-    "Proceso de desarrollo de software/Clase 2.md",
-    "Proceso de desarrollo de software",
     "redes de datos 1 v2/Primer parcial.md",
-    "redes de datos 1 v2/Mapa conceptual 1er parcial.md",
-    "redes de datos 1 v2",
-    "nordelgroup.md",
+    "redes de datos 1 v2/FINAL.md",
+    "redes de datos 1 v2/FINAL RESUMEN.md",
+    "redes de datos 1 v2/Comandos.md",
+    "aws.md",
+    "Teleinformática y Redes 1/Presentación de la materia.md",
+    "Teleinformática y Redes 1/Clase 2.md",
+    "Teleinformática y Redes 1/clase 11.md",
+    "Teleinformática y Redes 1/Clase 1.md",
+    "Teleinformática y Redes 1",
+    "Sistemas de Información 2/Ejercitacion clase 5 DFD.md",
+    "Sistemas de Información 2/Clase 6.md",
+    "Sistemas de Información 2/Clase 5.md",
+    "Sistemas de Información 2",
+    "Proceso de desarrollo de software",
     "Untitled.base",
-    "Sist de info 2 v2/Práctica.md",
-    "Sist de info 2 v2/Parcial 1.md",
-    "Sist de info 2 v2/Diagramas parcial 1.md",
     "Sist de info 2 v2",
-    "Pasted image 20251023234455.png",
-    "Pasted image 20251016205517.png",
-    "Pasted image 20251016205511.png",
-    "Pasted image 20251016205501.png",
-    "Pasted image 20251016205451.png",
-    "Pasted image 20250916204732.png",
-    "Pasted image 20250916204719.png",
-    "Pasted image 20250914003004.png",
-    "Pasted image 20250914002311.png",
-    "Pasted image 20250914002257.png",
-    "Notion/Sistemas de Información I/Resumen Final.md",
-    "Notion/Sistemas de Información I/Final ejemplo.md",
-    "Game devs.md",
-    "Fundamentos de telecomunicaciones/Teoría de la información/v2/Tipos de comunicación según el modo de transmisión.md",
-    "Fundamentos de telecomunicaciones/Teoría de la información/v2/7. Tipos de comunicación según el medio.md",
-    "Fundamentos de telecomunicaciones/Teoría de la información/v2/6. Teorema Shannon-Hartley.md",
-    "Fundamentos de telecomunicaciones/Teoría de la información/v2/5. Canal de comunicación.md",
-    "Fundamentos de telecomunicaciones/Teoría de la información/v2/4. Velocidad de transmisión.md",
-    "Fundamentos de telecomunicaciones/Teoría de la información/v2/3. Tasa de información.md",
-    "Fundamentos de telecomunicaciones/Teoría de la información/v2/2. Entropía.md",
-    "Fundamentos de telecomunicaciones/Teoría de la información/v2/1. Fundamentos.md",
-    "Fundamentos de telecomunicaciones/Señales de transmisión/v2/5. Problemas de las señales.md",
-    "Fundamentos de telecomunicaciones/Señales de transmisión/v2/4. Ancho de banda de Nyquist.md",
-    "Fundamentos de telecomunicaciones/Señales de transmisión/v2/3. Señal cuadrada.md",
-    "Fundamentos de telecomunicaciones/Señales de transmisión/v2/2. Señal senoidal.md",
-    "Fundamentos de telecomunicaciones/Teoría de la información/v2",
-    "Fundamentos de telecomunicaciones/Señales de transmisión/v2",
-    "Fundamentos de telecomunicaciones/Modulación/v2",
-    "Fundamentos de telecomunicaciones/Exámenes/Segundos Parciales",
-    "Fundamentos de telecomunicaciones/Exámenes/Primeros parciales",
-    "Fundamentos de telecomunicaciones/Exámenes/Finales"
+    "redes de datos 1 v2",
+    "Calculo 2",
+    "Fundamentos de telecomunicaciones/Medios no guiados",
+    "Fundamentos de telecomunicaciones/Medios guiados",
+    "Untitled.canvas"
   ]
 }
