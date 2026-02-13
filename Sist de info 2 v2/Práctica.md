@@ -18,7 +18,6 @@ El gimnasio **Vitalidad** quiere un sistema de gestión para modernizar sus oper
 
 
 Caso de uso
-
 ID: 777
 Nombre: Reservar clases 
 Creado por: Guillermo Hernández 
